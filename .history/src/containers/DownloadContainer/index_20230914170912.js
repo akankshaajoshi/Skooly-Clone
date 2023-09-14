@@ -1,0 +1,41 @@
+import React from 'react';
+import styled from 'styled-components';
+import { Container } from '@/components/custom/Container';
+import { heights, colors } from '@/assets';
+
+const containerStyle = {
+  backgroundColor: `${colors.white}`,
+  height: `${heights.small}`,
+};
+
+const CardContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: row;
+margin-top: 10px;
+gap: 30px;
+`;
+
+const Card  = styled.div`
+display: flex;
+align-items: center;
+flex-direction: row;
+min-height: 300px;
+flex: 1;
+`
+
+const index = () => {
+  return <Container style={containerStyle}>
+    <CardContainer>
+        <Card style={{backgroundColor: `${colors.primary}`}}>
+
+        </Card>
+        <Card style={{backgroundColor: `${colors.secondary}`}}>
+
+        </Card>
+    </CardContainer>
+  </Container>;
+};
+
+export default index;
