@@ -28,7 +28,7 @@ const NavRight = styled.div`
   display: flex;
   align-items: center;
   flex: 1; 
-  padding: 10px 70px 10px 10px;
+  padding: 10px;
   justify-content: flex-end; 
 `;
 

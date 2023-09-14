@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { navItems } from '@/utils/constants';
-import HamburgerMenu from "@/components/custom/HamburgerMenu"
+import {HamburgerMenu} from "@/components/custom/HamburgerMenu"
 import {colors} from "@/assets"
 import logo from '@/assets/images/skooly-logo.png';
 
@@ -28,7 +28,7 @@ const NavRight = styled.div`
   display: flex;
   align-items: center;
   flex: 1; 
-  padding: 10px 70px 10px 10px;
+  padding: 10px;
   justify-content: flex-end; 
 `;
 
