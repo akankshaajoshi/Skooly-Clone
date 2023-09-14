@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { navItems } from '@/utils/constants';
-import {colors} from "@/assets"
 import logo from '@/assets/images/skooly-logo.png';
 
 const Nav = styled.nav`
@@ -11,7 +10,6 @@ const Nav = styled.nav`
   z-index: 10000;
   position: fixed;
   width: 100%;
-  background-color: ${colors.primary};
 `;
 
 const NavLeft = styled.div`
@@ -22,40 +20,25 @@ const NavLeft = styled.div`
   justify-content: flex-start;
 `;
 
-
 const NavRight = styled.div`
   display: flex;
+  flex-direction: row;
   align-items: center;
-  flex: 1; 
-  padding: 10px;
-  justify-content: flex-end; 
 `;
-
 
 const NavComponent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-
-  &:hover{
-    cursor: pointer;
-    background-color: ${colors.black};
-    color: ${colors.white};
-  }
 `;
 
 const Img = styled.img`
   height: 40px;
   width: 100px;
-
-  &:hover{
-    cursor: pointer;
-  }
 `;
 
 const index = () => {
-  
   return (
     <Nav>
       <NavLeft>

@@ -25,7 +25,7 @@ const index = () => {
   return (
     <Container style={containerStyle}>
       <Card>
-        <CardText style={{color: "white", flex: "1", paddingLeft: "50px", paddingRight: "30px"}}>
+        <CardText style={{color: "white", flex: "1", paddingLeft: "40px", paddingRight: "30px"}}>
           <Heading>
           #1 Software to run any type of school, try it for free
           </Heading>

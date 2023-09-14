@@ -12,8 +12,8 @@ import { CardImage } from '@/components/custom/CardImage';
 import { ButtonContainer } from '@/components/custom/ButtonContainer';
 import imga from '@/assets/images/mobilea.png';
 import imgb from '@/assets/images/mobileb.png';
-import img2 from "@/assets/images/playstore.png";
-import img from "@/assets/images/appstore.png";
+import img from "@/assets/images/playstore.png";
+import img2 from "@/assets/images/appstore.png";
 
 const containerStyle = {
   backgroundColor: `${colors.quaternary}`,
@@ -28,16 +28,10 @@ const CardContainer = styled.div`
   flex-direction: row;
   margin-top: 10px;
   gap: 30px;
-  padding: 50px;
 
   @media screen and (max-width: 800px){
     flex-direction: column;
   }
-`;
-
-const Img = styled.img`
-height: 50px;
-width: 50px;
 `;
 
 const index = () => {
@@ -50,7 +44,7 @@ const index = () => {
             <Heading style={{ fontSize: fontSizes.medium }}>App for learners, students or parents</Heading>
             <ButtonContainer>
               {downloads.map((download, ind) => (
-                <Button><Img src = {ind === 1? img : img2} alt='download'/>{download}</Button>
+                <Button><img src = {ind === 1? {img} : {img2}} alt='download'/>{download}</Button>
               ))}
             </ButtonContainer>
           </CardText>
@@ -58,11 +52,11 @@ const index = () => {
         </Card>
         <Card style={{ backgroundColor: `${colors.secondary}` , paddingRight: "30px"}}>
           <CardImage src={imgb} />
-          <CardText style={{color: `${colors.white}`}}>
+          <CardText>
             <Heading style={{ fontSize: fontSizes.medium }}>App for schools, teachers, coaches</Heading>
             <ButtonContainer>
               {downloads.map((download, ind) => (
-                <Button> <Img src = {ind === 1? img : img2} alt='download'/>{download}</Button>
+                <Button> <img src = {ind === 1? {img} : {img2}} alt='download'/>{download}</Button>
               ))}
             </ButtonContainer>
           </CardText>

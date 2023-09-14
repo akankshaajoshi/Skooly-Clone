@@ -1,13 +1,11 @@
 import "@/styles/App.css"
-import Navbar from "@/components/shared/Navbar"
+//import Navbar from "@/components/shared/Navbar"
 import Home from "@/pages/Home"
 
 function App() {
 
-  return (<>
-  <Navbar/>
-  <Home/>
-  </>
+  return (
+    <Home/>
   );
 }
 

@@ -7,9 +7,7 @@ flex-direction: column;
 justify-content: center;
 width: 100%;
 
-@media screen and (max-width: 800px){
-    display: flex;
+@media screen and (max-width: 600px){
     flex-direction: column;
-    align-items: center;
 }
 `;

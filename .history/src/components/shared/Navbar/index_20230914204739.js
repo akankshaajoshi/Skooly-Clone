@@ -37,21 +37,11 @@ const NavComponent = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-
-  &:hover{
-    cursor: pointer;
-    background-color: ${colors.black};
-    color: ${colors.white};
-  }
 `;
 
 const Img = styled.img`
   height: 40px;
   width: 100px;
-
-  &:hover{
-    cursor: pointer;
-  }
 `;
 
 const index = () => {

@@ -4,10 +4,9 @@ import Home from "@/pages/Home"
 
 function App() {
 
-  return (<>
-  <Navbar/>
-  <Home/>
-  </>
+  return (
+    <Navbar/>
+    <Home/>
   );
 }
 

@@ -40,8 +40,7 @@ const NavComponent = styled.div`
 
   &:hover{
     cursor: pointer;
-    background-color: ${colors.black};
-    color: ${colors.white};
+    background-color: ${colors.quaternary};
   }
 `;
 

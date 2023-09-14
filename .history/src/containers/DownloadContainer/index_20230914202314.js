@@ -28,7 +28,6 @@ const CardContainer = styled.div`
   flex-direction: row;
   margin-top: 10px;
   gap: 30px;
-  padding: 50px;
 
   @media screen and (max-width: 800px){
     flex-direction: column;
@@ -58,7 +57,7 @@ const index = () => {
         </Card>
         <Card style={{ backgroundColor: `${colors.secondary}` , paddingRight: "30px"}}>
           <CardImage src={imgb} />
-          <CardText style={{color: `${colors.white}`}}>
+          <CardText>
             <Heading style={{ fontSize: fontSizes.medium }}>App for schools, teachers, coaches</Heading>
             <ButtonContainer>
               {downloads.map((download, ind) => (

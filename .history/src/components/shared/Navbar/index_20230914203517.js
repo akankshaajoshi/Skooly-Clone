@@ -1,66 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
 import { navItems } from '@/utils/constants';
-import {colors} from "@/assets"
-import logo from '@/assets/images/skooly-logo.png';
+import logo from "@/assets/images/skooly-logo.png";
 
 const Nav = styled.nav`
   display: flex;
   flex-direction: row;
   min-height: 80px;
   z-index: 10000;
-  position: fixed;
-  width: 100%;
-  background-color: ${colors.primary};
+  position: sticky;
 `;
 
 const NavLeft = styled.div`
   display: flex;
   align-items: center;
-  flex: 1;
+  flex-direction: row;
   padding: 10px;
-  justify-content: flex-start;
+  flex: 1;
 `;
-
 
 const NavRight = styled.div`
   display: flex;
+  flex-direction: row;
   align-items: center;
-  flex: 1; 
-  padding: 10px;
-  justify-content: flex-end; 
+  flex: 1;
 `;
 
-
 const NavComponent = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
-
-  &:hover{
-    cursor: pointer;
-    background-color: ${colors.black};
-    color: ${colors.white};
-  }
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 10px;
 `;
 
 const Img = styled.img`
-  height: 40px;
-  width: 100px;
-
-  &:hover{
-    cursor: pointer;
-  }
+height: 50px;
+width: 100px;
 `;
 
 const index = () => {
-  
   return (
     <Nav>
-      <NavLeft>
-        <Img src={logo} />
-      </NavLeft>
+      <NavLeft><Img src={logo}/></NavLeft>
       <NavRight>
         {navItems.map((item) => (
           <NavComponent>{item}</NavComponent>

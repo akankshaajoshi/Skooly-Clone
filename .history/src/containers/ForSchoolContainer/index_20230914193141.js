@@ -25,12 +25,12 @@ const index = () => {
   return (
     <Container style={containerStyle}>
       <Card>
-        <CardText style={{color: "white", flex: "1", paddingLeft: "50px", paddingRight: "30px"}}>
+        <CardText style={{color: "white", flex: "1", paddingLeft: "30px", paddingRight: "30px"}}>
           <Heading>
           #1 Software to run any type of school, try it for free
           </Heading>
           <Text> Supercharge your business with the world’s topmost school platform. Go online for enrollments, communication, billing & payments, attendance, bookings & class scheduling, live classes etc. Affordable, suitable for schools, centres of any sizes. </Text>
-        <Button style={{marginTop: "20px", backgroundColor: "blue"}}>Learn more</Button>
+        <Button style={{marginTop: "20px", color: "blue"}}>Learn more</Button>
         </CardText>
         <CardImage src={workspace} style={cardImageStyle}/>
       </Card>

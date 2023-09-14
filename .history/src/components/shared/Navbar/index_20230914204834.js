@@ -40,18 +40,13 @@ const NavComponent = styled.div`
 
   &:hover{
     cursor: pointer;
-    background-color: ${colors.black};
-    color: ${colors.white};
+    background-color: ${colors.quaternary};
   }
 `;
 
 const Img = styled.img`
   height: 40px;
   width: 100px;
-
-  &:hover{
-    cursor: pointer;
-  }
 `;
 
 const index = () => {
