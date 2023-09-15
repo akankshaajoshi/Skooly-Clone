@@ -6,7 +6,7 @@ function Stat({ value, label }) {
   const { number } = useSpring({
     number: value,
     from: { number: 0 },
-    trail: 50000,
+    trail: 5000,
   });
 
   return (

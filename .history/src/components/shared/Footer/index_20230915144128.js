@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Button } from '@/components/base/Button';
 import { Container } from '@/components/custom/Container';
 import logo from '@/assets/images/skooly-logo.png';
-import {colors} from "@/assets"
 import { SubHeading, Text } from '@/components/base/Typography';
 import { downloads, about, schoolsAndBusinesses, legal } from '@/utils/constants';
 import { Link } from 'react-router-dom';
@@ -35,16 +34,6 @@ const Img = styled.img`
   height: 40px;
 `;
 
-const StyledLink = styled(Link)`
-&& {
-    text-decoration: none;
-    color: ${colors.black};
-    &:hover{
-    color: ${colors.tertiary};
-    }
-}
-`
-
 const StyledFacebookIcon = styled(FacebookIcon)`
   && {
     opacity: 0.5;
@@ -69,16 +58,10 @@ const StyledYouTubeIcon = styled(YouTubeIcon)`
     opacity: 0.5;
     &:hover {
       cursor: pointer;
+
       opacity: 1;
     }
   }
-`;
-
-const Copyright = styled.span`
-  display: flex;
-  align-self: center;
-  justify-content: center;
-  margin: 30px;
 `;
 
 const index = () => {
@@ -86,10 +69,10 @@ const index = () => {
     <Container>
       <Info>
         <SmallContainer>
-          <SubHeading style={{ marginBottom: '5px' }}>
-            <Img src={logo} />
-          </SubHeading>
-          <ButtonContainer style={{ gap: '5px' }}>
+            <SubHeading>
+          <Img src={logo} />
+                </SubHeading>
+          <ButtonContainer style={{gap: "5px"}}>
             <StyledFacebookIcon />
             <StyledTwitterIcon />
             <StyledYouTubeIcon />
@@ -98,25 +81,25 @@ const index = () => {
         <SmallContainer>
           <SubHeading>About</SubHeading>
           {about.map((ele) => (
-            <StyledLink to={ele[0]}>
+            <Link to={ele[0]}>
               <Text>{ele[1]}</Text>
-            </StyledLink>
+            </Link>
           ))}
         </SmallContainer>
         <SmallContainer>
           <SubHeading>For Schools & Businesses</SubHeading>
           {schoolsAndBusinesses.map((ele, ind) => (
-            <StyledLink to={ele[0]}>
+            <Link to={ele[0]}>
               <Text>{ele[1]}</Text>
-            </StyledLink>
+            </Link>
           ))}
         </SmallContainer>
         <SmallContainer>
           <SubHeading>Legal</SubHeading>
           {legal.map((ele, ind) => (
-            <StyledLink to={ele[0]}>
+            <Link to={ele[0]}>
               <Text>{ele[1]}</Text>
-            </StyledLink>
+            </Link>
           ))}
         </SmallContainer>
         <SmallContainer>
@@ -129,7 +112,6 @@ const index = () => {
           ))}
         </SmallContainer>
       </Info>
-      <Copyright>Copyright 2023 © Skooly Pte Ltd. All Rights Reserved.</Copyright>
     </Container>
   );
 };

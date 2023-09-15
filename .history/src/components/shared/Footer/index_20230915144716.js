@@ -38,9 +38,8 @@ const Img = styled.img`
 const StyledLink = styled(Link)`
 && {
     text-decoration: none;
-    color: ${colors.black};
     &:hover{
-    color: ${colors.tertiary};
+    color: ${colors.quaternary};
     }
 }
 `

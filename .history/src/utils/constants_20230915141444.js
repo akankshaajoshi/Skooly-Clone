@@ -36,6 +36,6 @@ export const schoolsAndBusinesses = [
 ]
 
 export const legal = [
-  ["/tos","Terms of Service"],
-  ["/privacyPolicy" ,"Privacy Policy"]
+  "Terms of Service",
+  "Privacy Policy"
 ]

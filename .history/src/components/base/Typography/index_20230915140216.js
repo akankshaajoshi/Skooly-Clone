@@ -20,6 +20,6 @@ font-size: ${fontSizes.small};
 `;
 
 export const SubHeading = styled.h4`
-font-size: ${fontSizes.medium};
+font-size: ${fontSizes.small-5};
 font-weight: 700;
 `

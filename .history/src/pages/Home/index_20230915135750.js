@@ -5,7 +5,7 @@ import DownloadContainer from "@/containers/DownloadContainer"
 import ForSchoolContainer from "@/containers/ForSchoolContainer"
 import SchoolTypeContainer from "@/containers/SchoolTypeContainer"
 import StatsContainer from "@/containers/StatsContainer/Index"
-import Footer from "@/components/shared/Footer"
+import {Footer} from "@/components/shared/Footer"
 
 const index = () => {
   return (

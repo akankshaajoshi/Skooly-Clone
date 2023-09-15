@@ -25,17 +25,5 @@ export const statLabels = [
 ]
 
 export const about = [
-  ["/customerSupport", "Customer Support"]
-]
-
-export const schoolsAndBusinesses = [
-  ["/forSchools" , "For schools"],
-  ["/pricing", "Pricing"],
-  ["/forPartners", "For partners"],
-  ["/scheduleDemo","Schedule a Demo"]
-]
-
-export const legal = [
-  ["/tos","Terms of Service"],
-  ["/privacyPolicy" ,"Privacy Policy"]
+  "Customer Support"
 ]

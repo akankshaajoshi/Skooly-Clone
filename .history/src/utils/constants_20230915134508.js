@@ -23,19 +23,3 @@ export const statLabels = [
     "Countries", "worth payments processed",
     "Schools", "Teachers & Coaches"
 ]
-
-export const about = [
-  ["/customerSupport", "Customer Support"]
-]
-
-export const schoolsAndBusinesses = [
-  ["/forSchools" , "For schools"],
-  ["/pricing", "Pricing"],
-  ["/forPartners", "For partners"],
-  ["/scheduleDemo","Schedule a Demo"]
-]
-
-export const legal = [
-  ["/tos","Terms of Service"],
-  ["/privacyPolicy" ,"Privacy Policy"]
-]
