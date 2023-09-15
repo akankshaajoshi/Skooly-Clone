@@ -1,6 +1,6 @@
 export const navItems = ['For schools', 'Teach a course', 'Signup', 'Login'];
 
-export const hamburgerItems = ['Download app', 'Contact support', 'English', "Add New"];
+export const hamburgerItems = ['Download app', 'Contact support', 'English'];
 
 export const downloads = ['Download it on the Play store', 'Get it on the App store'];
 
@@ -16,10 +16,7 @@ export const schoolTypes = [
 ];
 
 export const stats = [
-    25, 15, 5000, 20000
+  ['25', 'Countries'],
+  ['15 million+', 'worth payments processed'][('5,000+', 'Schools')],
+  ['20,000+', 'Teachers & coaches'],
 ];
-
-export const statLabels = [
-    "Countries", "Million: worth payments processed",
-    "Schools", "Teachers & Coaches"
-]

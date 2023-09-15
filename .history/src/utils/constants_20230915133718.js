@@ -20,6 +20,6 @@ export const stats = [
 ];
 
 export const statLabels = [
-    "Countries", "Million: worth payments processed",
+    "Countries", "Million Worth payments processed",
     "Schools", "Teachers & Coaches"
 ]

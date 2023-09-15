@@ -16,10 +16,7 @@ export const schoolTypes = [
 ];
 
 export const stats = [
-    25, 15, 5000, 20000
+  ['25', 'Countries'],
+  ['15', 'worth payments processed'],['5,000+', 'Schools'],
+  ['20,000+', 'Teachers & coaches'],
 ];
-
-export const statLabels = [
-    "Countries", "Million: worth payments processed",
-    "Schools", "Teachers & Coaches"
-]

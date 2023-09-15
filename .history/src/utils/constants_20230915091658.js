@@ -18,8 +18,3 @@ export const schoolTypes = [
 export const stats = [
     25, 15, 5000, 20000
 ];
-
-export const statLabels = [
-    "Countries", "Million: worth payments processed",
-    "Schools", "Teachers & Coaches"
-]
