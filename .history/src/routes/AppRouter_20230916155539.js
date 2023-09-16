@@ -4,7 +4,6 @@ import Home from "@/pages/Home"
 import Signup from "@/pages/Signup"
 import Login from "@/pages/Login"
 import UserOnboarding from "@/pages/UserOnboarding";
-import Preschool from "@/pages/Preschool"
 
 const AppRouter = () => {
   return (
@@ -13,7 +12,6 @@ const AppRouter = () => {
       <Route path="/signup" element={<Signup/>}/> 
       <Route path="/login" element={<Login/>}/>
       <Route path='/register-school' element={<UserOnboarding/>}></Route>
-      <Route path="/register-school/preschool" element={<Preschool/>}/>
     </Routes>
   )
 }

@@ -1,7 +1,7 @@
-import academy from "@/assets/images/academy.png"
-import onlineschool from "@/assets/images/online-school.png"
-import preschool from "@/assets/images/preschool.png"
-import school from "@/assets/images/school.png"
+import {academy} from "@/assets/images/academy.png"
+import {onlineschool} from "@/assets/images/online-school.png"
+import {preschool} from "@/assets/images/preschool.png"
+import {school} from "@/assets/images/school.png"
 
 
 export const navItems = [
@@ -48,8 +48,5 @@ export const legal = [
 ];
 
 export const userOnboarding = [
-  ["Academy", "Book or schedule classes", academy, "/academy"],
-  ["Online school", "Cohort based courses, online classes, remote teaching, hybrid", onlineschool, "/register-school/online-school"],
-  ["Preschool", "Daycare, Nurseries, or Childcare", preschool, "/register-school/preschool"],
-  ["School", "Regular day schools, Sunday schools, K12 Schools", school, "/register-school/school"]
+  ["Academy", "Book or schedule classes", ""]
 ]
