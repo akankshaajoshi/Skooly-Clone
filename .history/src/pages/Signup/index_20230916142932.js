@@ -56,7 +56,7 @@ export default function Signup() {
   });
 
   const onSubmit = (data) => {
-    console.log("You are now signed in! " + data);
+    console.log("You have been logged in! " + data);
     login();
   };
 

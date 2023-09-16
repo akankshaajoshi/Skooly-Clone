@@ -1,4 +1,3 @@
-import React, {useContext} from "react";
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Container } from '@/components/custom/Container';
@@ -29,20 +28,17 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 export default function Signup() {
-
-  const {login} = useContext(AuthContext);
-
   const phoneRegExp = /^((\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   const schema = yup
     .object({
-      firstName: yup.string().required('First name is a required field').max(30, "First name cannot have more than 30 characters"),
-      lastName: yup.string().required('Last name is a required field').max(30, "Last name cannot have more than 30 characters"),
-      email: yup.string().email('Invalid email format, please enter a valid email').required('Please enter an email'),
+      firstName: yup.string().required('First name is a required field'),
+      lastName: yup.string().required('Last name is a required field'),
+      email: yup.string().email('Invalid email format, re enter email').required('Please enter an email'),
       password: yup
         .string()
         .required('Password is a required field')
         .min(8, 'Minimum length of password must be 8 characters'),
-      mobileNumber: yup.string().matches(phoneRegExp, 'Invalid format for a mobile number').min(10),
+      mobileNumber: yup.string().matches(phoneRegExp, 'Invalid format for a mobile number'),
       agreeTerms: yup.string().required('Accept the terms and condition to sign up'),
     })
     .required();
@@ -56,8 +52,7 @@ export default function Signup() {
   });
 
   const onSubmit = (data) => {
-    console.log("You are now signed in! " + data);
-    login();
+    console.log(data);
   };
 
   return (

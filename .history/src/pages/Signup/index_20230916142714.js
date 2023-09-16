@@ -1,4 +1,3 @@
-import React, {useContext} from "react";
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Container } from '@/components/custom/Container';
@@ -29,9 +28,6 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 export default function Signup() {
-
-  const {login} = useContext(AuthContext);
-
   const phoneRegExp = /^((\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   const schema = yup
     .object({
@@ -56,8 +52,7 @@ export default function Signup() {
   });
 
   const onSubmit = (data) => {
-    console.log("You are now signed in! " + data);
-    login();
+    console.log(data);
   };
 
   return (

@@ -30,7 +30,7 @@ import * as yup from 'yup';
 
 export default function Signup() {
 
-  const {login} = useContext(AuthContext);
+  const {login, logout} = useContext(AuthContext);
 
   const phoneRegExp = /^((\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   const schema = yup
@@ -56,7 +56,7 @@ export default function Signup() {
   });
 
   const onSubmit = (data) => {
-    console.log("You are now signed in! " + data);
+    console.log(data);
     login();
   };
 
