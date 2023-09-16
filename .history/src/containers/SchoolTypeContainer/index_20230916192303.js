@@ -38,7 +38,7 @@ const index = () => {
     <Container style={{ backgroundColor: `${colors.quaternary}` }}>
       <Heading>Pick your school type to get started</Heading>
       <ElementContainer>
-        {schoolTypes.map((ele) => (
+        {schoolTypes.map((elem) => (
           <StyledLink to={ele[0]}>
             <Element>{ele[1]}</Element>{' '}
           </StyledLink>

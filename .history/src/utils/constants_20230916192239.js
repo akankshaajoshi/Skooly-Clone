@@ -5,7 +5,7 @@ import school from "@/assets/images/school.png"
 
 
 export const navItems = [
-  ['/register-school', 'For schools'],
+  ['https://getskooly.com/schools/en/', 'For schools'],
   ['https://getskooly.com/mpweb/#/school-form', 'Teach a course'],
   ['/signup', 'Signup'],
   ['/login', 'Login'],
@@ -20,7 +20,7 @@ export const downloads = [
 
 export const schoolTypes = [
   ["/register-school",'Online school'],
-  ["/register-school/preschool",'Preschool & Childcare'],
+  ["/register-school",'Preschool & Childcare'],
   ["/register-school",'Coaching & Tutoring'],
   ["/register-school",'Sports'],
   ["/register-school",'Music & Dance'],

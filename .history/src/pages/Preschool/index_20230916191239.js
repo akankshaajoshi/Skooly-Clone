@@ -5,6 +5,8 @@ import { colors } from '@/assets';
 import SignupContainer from '@/containers/SignupContainer';
 import { Heading } from '@/components/base/Typography';
 import img from '@/assets/images/skooly-logo.png';
+import { Link } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { Header, Img } from '@/pages/Signup/helpers';
 import preschool1 from '@/assets/images/preschool1.jpg';
 import preschool2 from '@/assets/images/preschool2.png';
@@ -52,6 +54,9 @@ const index = () => {
       }}
     >
       <InnerContainer style={{ flex: '1' }}>
+        <Link to="/register-school">
+          <ArrowBackIcon fontSize="large" />
+        </Link>
         <Header>
           <Img src={img} />
         </Header>
@@ -65,7 +70,7 @@ const index = () => {
         </ImageWrapper>
       </InnerContainer>
       <InnerContainer style={{ flex: '1' }}>
-        <SignupContainer header="Preschool"/>
+        <SignupContainer />
       </InnerContainer>
     </Container>
   );

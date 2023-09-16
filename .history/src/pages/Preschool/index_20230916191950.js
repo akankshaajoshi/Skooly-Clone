@@ -65,7 +65,7 @@ const index = () => {
         </ImageWrapper>
       </InnerContainer>
       <InnerContainer style={{ flex: '1' }}>
-        <SignupContainer header="Preschool"/>
+        <SignupContainer header="Register your Preschool"/>
       </InnerContainer>
     </Container>
   );

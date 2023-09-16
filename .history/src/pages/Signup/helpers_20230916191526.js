@@ -35,7 +35,7 @@ export const Form = styled.form`
 
 export const Img = styled.img`
   width: 100px;
-  height: 40px;
+  height: 50px;
 `;
 
 export const ToggleMenu = styled.div`
