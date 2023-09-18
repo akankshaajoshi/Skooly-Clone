@@ -1,8 +1,10 @@
-import academy from "@/assets/images/academy.png"
-import onlineschool from "@/assets/images/online-school.png"
-import preschool from "@/assets/images/preschool.png"
-import school from "@/assets/images/school.png"
-
+import academy from '@/assets/images/academy.png';
+import onlineschool from '@/assets/images/online-school.png';
+import preschool from '@/assets/images/preschool.png';
+import school from '@/assets/images/school.png';
+import course from '@/assets/images/course.png';
+import enroll from '@/assets/images/enroll.png';
+import schedule from '@/assets/images/schedule.png';
 
 export const navItems = [
   ['/register-school', 'For schools'],
@@ -19,14 +21,14 @@ export const downloads = [
 ];
 
 export const schoolTypes = [
-  ["/register-school",'Online school'],
-  ["/register-school/preschool",'Preschool & Childcare'],
-  ["/register-school",'Coaching & Tutoring'],
-  ["/register-school",'Sports'],
-  ["/register-school",'Music & Dance'],
-  ["/register-school",'Fitness & Gym'],
-  ["/register-school",'General Academy'],
-  ["/register-school",'K12 School'],
+  ['/register-school', 'Online school'],
+  ['/register-school/preschool', 'Preschool & Childcare'],
+  ['/register-school', 'Coaching & Tutoring'],
+  ['/register-school', 'Sports'],
+  ['/register-school', 'Music & Dance'],
+  ['/register-school', 'Fitness & Gym'],
+  ['/register-school', 'General Academy'],
+  ['/register-school', 'K12 School'],
 ];
 
 export const stats = [25, 15, 5000, 20000];
@@ -48,8 +50,63 @@ export const legal = [
 ];
 
 export const userOnboarding = [
-  ["Academy", "Book or schedule classes", academy, "/academy"],
-  ["Online school", "Cohort based courses, online classes, remote teaching, hybrid", onlineschool, "/register-school/online-school"],
-  ["Preschool", "Daycare, Nurseries, or Childcare", preschool, "/register-school/preschool"],
-  ["School", "Regular day schools, Sunday schools, K12 Schools", school, "/register-school/school"]
+  ['Academy', 'Book or schedule classes', academy, '/academy'],
+  [
+    'Online school',
+    'Cohort based courses, online classes, remote teaching, hybrid',
+    onlineschool,
+    '/register-school/online-school',
+  ],
+  ['Preschool', 'Daycare, Nurseries, or Childcare', preschool, '/register-school/preschool'],
+  ['School', 'Regular day schools, Sunday schools, K12 Schools', school, '/register-school/school'],
+];
+
+export const onboardingCards = [
+  ['Add course', 'Add courses and setup fees to get started.', course],
+  ['Add schedule', 'Do you want to add schedules ?', schedule],
+  ['Enroll your first student', 'Enroll students to the courses.', enroll],
+];
+
+export const remainingCards = [
+  ['Add your payment provider', 'Please setup payments', 'Setup payments'],
+  ['Add another location', 'Would you like to add location ?', 'Add location'],
+  ['Add staff', 'Would you like to send invites to staff ?', 'Invite staff'],
+];
+
+export const timelineData = [
+  [1, 'Setup courses and fees'],
+  [2, 'Setup schedules'],
+  [3, 'Enroll students'],
+  [4, 'Download admin mobile app'],
+  ['', 'Setup online payments'],
+  ['', 'Add another location'],
+  ['', 'Get your staff on board !!'],
+];
+
+export const details = [
+  {
+    header: "Type of education offered",
+    content: "Online School"
+  },  {
+    header: "Institution's Contact No",
+    content: "Institution Number is "
+  },  {
+    header: "Website",
+    content: ""
+  },  {
+    header: "Billing Details",
+    content: ""
+  },  {
+    header: "Timezone",
+    content: "Timezone is "
+  },  {
+    header: "Currency",
+    content: "Currency is "
+  },{
+    header: "School Address",
+    content: ""
+  },{
+    header: "Deactivate account",
+    content: ""
+  },
 ]

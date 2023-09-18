@@ -1,7 +1,4 @@
-import { useContext } from 'react';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { Container } from '@/components/custom/Container';
 import { Copyright } from '@/components/custom/Copyright';
@@ -10,16 +7,19 @@ import { legal } from '@/utils/constants';
 import { StyledLink } from '@/components/custom/StyledLink';
 import { Text } from '@/components/base/Typography';
 import { AuthContext } from '@/contexts/AuthContext';
-import { Link, useNavigate} from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import StyledSelectTime from '@/utils/StyledSelectTime';
 import StyledSelectCurrency from '@/utils/StyledSelectCurrency';
+
 import { ItemTitle, Form, Field, FieldLabel, StyledInput, ButtonInput, Error, Wrapper } from '@/pages/Signup/helpers';
 import StyledSelect from '@/utils/StyledSelect';
-
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 
 export default function Signup({ header }) {
-  const { login, loginState } = useContext(AuthContext);
-  const navigate = useNavigate();
+  const { login } = useContext(AuthContext);
+
   const phoneRegExp = /^((\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
   const schema = yup
     .object({
@@ -56,9 +56,8 @@ export default function Signup({ header }) {
   const onSubmit = (data) => {
     console.log('You are now signed in! ' + data);
     login();
-    navigate('/register-school/preschool/dashboard');
+    <Navigate to="/register-school/preschool/dashboard" />;
   };
-
 
   return (
     <Container
@@ -67,7 +66,7 @@ export default function Signup({ header }) {
         borderRadius: `${borderRadius.large}`,
       }}
     >
-      <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form onSubmit={(e) => handleSubmit(e, onSubmit)}>
         <ItemTitle>
           <Link to="/register-school">
             <ArrowBackIcon fontSize="medium" />
@@ -136,7 +135,7 @@ export default function Signup({ header }) {
           </Wrapper>
           {<Error>{errors.agreeTerms?.message}</Error>}
         </Field>
-          <ButtonInput type="submit"/>
+        <ButtonInput type="submit" />
         <Field style={{ alignItems: 'center', justifyContent: 'center', paddingTop: '20px' }}>
           Already have an account? <StyledLink to="/login">Login here</StyledLink>
         </Field>

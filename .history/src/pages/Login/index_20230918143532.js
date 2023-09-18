@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, {useContext} from 'react';
+import { Link, Navigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { Container } from '@/components/custom/Container';
 import img from '@/assets/images/skooly-logo.png';
@@ -21,12 +21,13 @@ import {
   ButtonInput,
   Error,
 } from '@/pages/Signup/helpers';
+
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 export default function Signup() {
-  const { login } = useContext(AuthContext);
-  const navigate = useNavigate();
+
+  const {login} = useContext(AuthContext);
 
   const schema = yup
     .object({
@@ -43,9 +44,9 @@ export default function Signup() {
   });
 
   const onSubmit = (data) => {
-    console.log('You are logged in!' + data);
+    console.log("You are logged in!" + data);
     login();
-    navigate('/register-school/preschool/dashboard');
+    <Navigate to="register-school/preschool/dashboard"/>
   };
 
   return (
@@ -70,7 +71,7 @@ export default function Signup() {
             <StyledInput type="text" placeholder="Your Email address" {...register('email')} />
             {<Error>{errors.email?.message}</Error>}
           </Field>
-            <ButtonInput type="submit" />
+          <ButtonInput type="submit" />
           <Field style={{ alignItems: 'center', justifyContent: 'center', paddingTop: '20px' }}>
             Dont have an account? <StyledLink to="/signup">Signup here</StyledLink>
           </Field>
