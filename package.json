@@ -9,6 +9,7 @@
     "@hookform/resolvers": "^3.3.1",
     "@mui/icons-material": "^5.14.9",
     "@mui/material": "^5.14.9",
+    "@tanstack/react-query": "^4.35.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -23,6 +24,10 @@
     "yup": "^1.2.0"
   },
   "scripts": {
+    "server:json": "json-server --watch server/db.json --port 8080",
+    "server:express": "node server/index.js",
+    "generate": "node server/generator.js",
+    "generator:dev": "nodemon server/generator.js",
     "start": "craco start",
     "build": "craco build",
     "test": "cracotest",
@@ -47,6 +52,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@faker-js/faker": "^8.0.2"
   }
 }
