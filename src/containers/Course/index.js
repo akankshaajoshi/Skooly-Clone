@@ -115,11 +115,11 @@ function FilterableTable() {
   const filteredCourses = fakeCourses
     ? fakeCourses.filter((course) => {
         return (
-          course.courseName.toLowerCase().includes(filter.courseName.toString().toLowerCase()) &&
-          course.classType.toString().toLowerCase().includes(filter.classType.toString().toLowerCase()) &&
-          course.category.toString().toLowerCase().includes(filter.category.toString().toLowerCase()) &&
-          course.pricingOption.toString().toLowerCase().includes(filter.pricingOption.toString().toLowerCase()) &&
-          course.branches.toString().toLowerCase().includes(filter.branches.toString().toLowerCase())
+          course.courseName.toLowerCase().startsWith(filter.courseName.toString().toLowerCase()) &&
+          course.classType.toString().toLowerCase().startsWith(filter.classType.toString().toLowerCase()) &&
+          course.category.toString().toLowerCase().startsWith(filter.category.toString().toLowerCase()) &&
+          course.pricingOption.toString().toLowerCase().startsWith(filter.pricingOption.toString().toLowerCase()) &&
+          course.branches.toString().toLowerCase().startsWith(filter.branches.toString().toLowerCase())
         );
       })
       : [];
