@@ -62,9 +62,9 @@ export const userOnboarding = [
 ];
 
 export const onboardingCards = [
-  ['Add course', 'Add courses and setup fees to get started.', course],
-  ['Add schedule', 'Do you want to add schedules ?', schedule],
-  ['Enroll your first student', 'Enroll students to the courses.', enroll],
+  ['Add course', 'Add courses and setup fees to get started.', course, "/register-school/preschool/dashboard/course"],
+  ['Add schedule', 'Do you want to add schedules ?', schedule, "/register-school/preschool/dashboard/schedule"],
+  ['Enroll your first student', 'Enroll students to the courses.', enroll, "/register-school/preschool/dashboard/student"],
 ];
 
 export const remainingCards = [

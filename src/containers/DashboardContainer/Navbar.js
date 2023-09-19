@@ -11,7 +11,7 @@ const NavbarContainer = styled.div`
   color: white;
   flex-wrap: wrap;
   max-width: 60px;
-  gap: 10px;
+  gap: 20px;
 `;
 
 const NavbarImage = styled.img`
@@ -21,12 +21,27 @@ const NavbarImage = styled.img`
   cursor: pointer;
 `;
 
+const Button = styled.button`
+width: 50px;
+  border: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: pink;
+    background-color: white;
+  }
+`;
+
+
 function Navbar({ name, imageSrc }) {
   return (
     <NavbarContainer>
       <Link to="/register-school/preschool/dashboard/details" style={{textDecoration: "none"}}>
       <NavbarImage src={imageSrc} alt={name} />
       <span>Welcome, {name}</span>
+      {name==="details" && <Link to="/register-school/preschool/dashboard"><Button>Go back</Button></Link>}
       </Link>
     </NavbarContainer>
   );
