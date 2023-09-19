@@ -1,15 +1,8 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components';
+import {Link} from "react-router-dom";
 import { onboardingCards, remainingCards } from '@/utils/constants';
 import Timeline from "@/components/custom/Timeline";
-import Navbar from "@/containers/DashboardContainer/Navbar"
-
-// Create a styled container component
-const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
 
 // Create a styled inner container component
 const InnerContainer = styled.div`
@@ -55,6 +48,7 @@ const Button = styled.button`
     background-color: white;
   }
 `;
+
 const InvertButton = styled(Button)`
   && {
     background-color: white;
@@ -67,11 +61,9 @@ const InvertButton = styled(Button)`
   }
 `;
 
-function index() {
-  return (
-    <Container>
-      <Navbar name="Test School" imageSrc="https://getskooly.com/skoolyweb/imgs/dashboard/school-image.png" />
-      <InnerContainer style={{justifyContent: "flex-start"}}>
+const index = () => {
+  return (<>
+<InnerContainer style={{justifyContent: "flex-start"}}>
         <Timeline/>
       </InnerContainer>
       <InnerContainer>
@@ -81,7 +73,7 @@ function index() {
               <Content>
                 <h2>{content[0]}</h2>
                 <p>{content[1]}</p>
-                <Button>{content[0]}</Button>
+                <Link to={content[3]}> <Button>{content[0]}</Button> </Link>
               </Content>
               <Image src={content[2]} />
             </Card>
@@ -99,8 +91,8 @@ function index() {
           );
         })}
       </InnerContainer>
-    </Container>
-  );
+        </>
+  )
 }
 
-export default index;
+export default index

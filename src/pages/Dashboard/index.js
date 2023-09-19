@@ -1,11 +1,24 @@
-import React from 'react'
-import DashboardContainer from "@/containers/DashboardContainer"
-const index = () => {
+import React from 'react';
+import styled from 'styled-components';
+import Navbar from "@/containers/DashboardContainer/Navbar"
+
+// Create a styled container component
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+`;
+
+
+function index({children}) {
   return (
-    <div>
-      <DashboardContainer/>
-    </div>
-  )
+    <Container style={{minHeight: "100vh"}}>
+      <Navbar name="Test School" imageSrc="https://getskooly.com/skoolyweb/imgs/dashboard/school-image.png" />
+      {/* <Dashboard/> */}
+      {/* <Course/> */}
+      {children}
+    </Container>
+  );
 }
 
-export default index
+export default index;

@@ -1,14 +1,14 @@
-import React from 'react'
-import styled from 'styled-components'
-import {details} from "@/utils/constants"
+import React from 'react';
+import { useQuery } from 'react-query';
+import styled from 'styled-components';
+import { details } from '@/utils/constants';
 import Navbar from '@/containers/DashboardContainer/Navbar';
+import { fetchApiData } from '@/lib/fetchData';
 
-const index = () => {
-    const Container = styled.div`
+const Container = styled.div`
   display: flex;
   justify-content: space-between;
 `;
-
 
 // Create a styled inner container component
 const InnerContainer = styled.div`
@@ -34,19 +34,38 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
 `;
-  return (
-<Container>
-    <Navbar></Navbar>
-    <InnerContainer>
-       {details.map((ele)=>{return (<Card>
-            <Content>
-                <h3>{ele.header}</h3>
-                <p>{ele.content}</p>
-            </Content>
-        </Card>)})}
-    </InnerContainer>
-</Container>  
-  )
-}
+const Index = () => {
 
-export default index
+  const { data, isLoading, isError, error } = useQuery('apiData', fetchApiData);
+  
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error: {error.message}</div>;
+  }
+  
+  const user = data[0];
+  const values = Object.values(user);
+  
+  return (
+    <Container>
+      <Navbar name="details" imageSrc="https://getskooly.com/skoolyweb/imgs/dashboard/school-image.png"></Navbar>
+      <InnerContainer>
+        {details.map((ele, ind) => {
+          return (
+            <Card key={values[0]}>
+              <Content>
+                <h3>{ele.header}</h3>
+                <p>{ele.content}{ind===0? "": JSON.stringify(values[ind])}</p>
+              </Content>
+            </Card>
+          );
+        })}
+      </InnerContainer>
+    </Container>
+  );
+};
+
+export default Index;

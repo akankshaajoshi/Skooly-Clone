@@ -8,6 +8,8 @@ import Preschool from '@/pages/Preschool';
 import Dashboard from '@/pages/Dashboard';
 import Details from "@/pages/Details";
 import { AuthContext } from '@/contexts/AuthContext';
+import DashboardContainer from "@/containers/DashboardContainer"
+import Course from "@/containers/Course"
 
 const AppRouter = () => {
   const { loginState } = useContext(AuthContext);
@@ -19,8 +21,11 @@ const AppRouter = () => {
         <Route path="/login" element={<Login />} > </Route>
         <Route path="/register-school" element={<UserOnboarding />}/>
         <Route path="/register-school/preschool" element={<Preschool />} />
-        <Route path="/register-school/preschool/dashboard" element={loginState ? <Dashboard /> : <Navigate to="/" />} />
-        <Route path="/register-school/preschool/dashboard/details" element={loginState ? <Details/> : <Navigate to="/" />} />
+        <Route path="/register-school/preschool/dashboard" element={loginState ? <Dashboard children={<DashboardContainer/>} /> : <Navigate to="/" />} />
+        <Route path="/register-school/preschool/dashboard/details" element={loginState ? <Details children={<Details/>}/> : <Navigate to="/" />} />
+        <Route path="/register-school/preschool/dashboard/course" element={loginState ? <Dashboard children={<Course/>}/> : <Navigate to="/" />} />
+        <Route path="/register-school/preschool/dashboard/schedule" element={loginState ? <Dashboard/> : <Navigate to="/" />} />
+        <Route path="/register-school/preschool/dashboard/student" element={loginState ? <Dashboard/> : <Navigate to="/" />} />
       </Routes>
     </>
   );

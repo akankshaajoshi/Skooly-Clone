@@ -23,8 +23,27 @@ const generatePersonsData = (number) => {
     return persons;
   };
 
+
+  function generateCourseData(count) {
+    const courses = [];
+  
+    for (let i = 0; i < count; i++) {
+      const course = {
+        id: i,
+        courseName: faker.word.words(2), // Generate a random course name
+        classType: faker.helpers.uniqueArray(["Group", "One to one"], 1).toString(),
+        category: faker.helpers.uniqueArray(["Online school", "Preschool"], 1).toString(), // Random category
+        pricingOption: faker.helpers.uniqueArray(['Free', 'Paid'], 1).toString(), // Random pricing option
+        branches: faker.helpers.uniqueArray(["Main", "Other"], 1).toString(), // Random branches
+      };
+      courses.push(course);
+    }
+    return courses;
+  }
+
+
   fs.writeFile(
     "server/db.json",
-    JSON.stringify({ users: generatePersonsData(20) }),
+    JSON.stringify({ users: generatePersonsData(20), courses: generateCourseData(20)}),
     ()=>console.log("data written")
   );
