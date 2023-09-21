@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {hamburgerItems} from "@/utils/constants"
-import {colors} from "@/assets"
+import { hamburgerItems } from '@/utils/constants';
+import { colors } from '@/assets';
 
 const HamburgerMenuWrapper = styled.div`
   display: flex;
@@ -36,7 +36,7 @@ const MenuItem = styled.li`
   margin: 10px 0;
 `;
 
-const HamburgerMenu = () => {
+function HamburgerMenu() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -51,10 +51,15 @@ const HamburgerMenu = () => {
         <Line />
       </HamburgerIcon>
       <MenuList isOpen={isOpen}>
-        {hamburgerItems.map((item, ind)=><MenuItem key={ind}>{item}<hr></hr></MenuItem>)}
+        {hamburgerItems.map((item, ind) => (
+          <MenuItem key={ind}>
+            {item}
+            <hr />
+          </MenuItem>
+        ))}
       </MenuList>
     </HamburgerMenuWrapper>
   );
-};
+}
 
 export default HamburgerMenu;

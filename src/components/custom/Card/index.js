@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import {borderRadius} from "@/assets"
+import styled from 'styled-components';
+import { borderRadius } from '@/assets';
 
 export const Card = styled.div`
   display: flex;

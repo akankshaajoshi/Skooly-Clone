@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { navItems } from '@/utils/constants';
-import HamburgerMenu from "@/components/custom/HamburgerMenu"
-import {colors} from "@/assets"
+import HamburgerMenu from '@/components/custom/HamburgerMenu';
+import { colors } from '@/assets';
 import logo from '@/assets/images/skooly-logo.png';
-import {StyledLink} from "@/components/custom/StyledLink"
+import { StyledLink } from '@/components/custom/StyledLink';
 
 const Nav = styled.nav`
   display: flex;
@@ -24,15 +24,13 @@ const NavLeft = styled.div`
   justify-content: flex-start;
 `;
 
-
 const NavRight = styled.div`
   display: flex;
   align-items: center;
-  flex: 1; 
+  flex: 1;
   padding: 10px 70px 10px 10px;
-  justify-content: flex-end; 
+  justify-content: flex-end;
 `;
-
 
 const NavComponent = styled.div`
   display: flex;
@@ -41,7 +39,7 @@ const NavComponent = styled.div`
   padding: 10px;
   text-decoration: none;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
     background-color: ${colors.black};
     color: ${colors.white};
@@ -52,26 +50,26 @@ const Img = styled.img`
   height: 40px;
   width: 100px;
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 `;
 
-const index = () => {
-  
-  return (
-    <Nav>
-      <NavLeft>
-        <Img src={logo} />
-      </NavLeft>
-      <NavRight>
-        {navItems.map((item) => (
-          <StyledLink to={item[0]}> <NavComponent>{item[1]}</NavComponent> </StyledLink>
-        ))}
-        <HamburgerMenu></HamburgerMenu>
-      </NavRight>
-    </Nav>
-  );
-};
+const index = () => (
+  <Nav>
+    <NavLeft>
+      <Img src={logo} />
+    </NavLeft>
+    <NavRight>
+      {navItems.map((item) => (
+        <StyledLink to={item[0]}>
+          {' '}
+          <NavComponent>{item[1]}</NavComponent>{' '}
+        </StyledLink>
+      ))}
+      <HamburgerMenu />
+    </NavRight>
+  </Nav>
+);
 
 export default index;

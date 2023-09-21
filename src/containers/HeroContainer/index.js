@@ -28,20 +28,20 @@ const buttonStyle = {
   borderRadius: `${borderRadius.small}`,
 };
 
-const index = () => {
-  return (
-    <Container style={containerStyle}>
-      <ContainerInner>
-        <Heading>Instantly join your school on Skooly</Heading>
-        <StyledLink to="/signup">
-          <Button style={buttonStyle}>Join now</Button>
-        </StyledLink>
-      </ContainerInner>
-      <SubSubHeading>
-        <StyledLink to={`https://getskooly.com/mpweb/#/exclusive`}>Register as school or teacher</StyledLink>
-      </SubSubHeading>
-    </Container>
-  );
-};
+const index = () => (
+  <Container style={containerStyle}>
+    <ContainerInner>
+      <Heading>Instantly join your school on Skooly</Heading>
+      <StyledLink to="/signup">
+        <Button style={buttonStyle}>Join now</Button>
+      </StyledLink>
+    </ContainerInner>
+    <SubSubHeading>
+      <StyledLink to="https://getskooly.com/mpweb/#/exclusive">
+        Register as school or teacher
+      </StyledLink>
+    </SubSubHeading>
+  </Container>
+);
 
 export default index;
