@@ -26,9 +26,11 @@ export const deleteStudentData = async (studentIds) => {
     }
 
     // Assuming you have an endpoint for deleting students
-    const deleteRequests = studentIds.map((studentId) => {
-      return axios.delete(`http://localhost:8080/students/${studentId}`,  { body: 'my delete body' });
-    });
+    const deleteRequests = studentIds.map((studentId) =>
+      axios.delete(`http://localhost:8080/students/${studentId}`, {
+        body: 'my delete body',
+      }),
+    );
 
     await Promise.all(deleteRequests);
 

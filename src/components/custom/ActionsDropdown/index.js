@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import SlidingWindow from "@/containers/SlidingWindow"
+import SlidingWindow from '@/containers/SlidingWindow';
 
 const DropdownContainer = styled.div`
   display: inline-block;
@@ -32,7 +32,7 @@ const DropdownItem = styled.div`
   }
 `;
 
-function ActionsDropdown({data, index}) {
+function ActionsDropdown({ data, index }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showSlidingWindow, setShowSlidingWindow] = useState(false);
 
@@ -48,7 +48,12 @@ function ActionsDropdown({data, index}) {
   return (
     <DropdownContainer>
       <DropdownButton onClick={toggleDropdown}>Actions</DropdownButton>
-      <SlidingWindow open={showSlidingWindow} onClose={() => setShowSlidingWindow(false)} data={data} index={index} />
+      <SlidingWindow
+        open={showSlidingWindow}
+        onClose={() => setShowSlidingWindow(false)}
+        data={data}
+        index={index}
+      />
       <DropdownContent open={isOpen}>
         <DropdownItem onClick={openSlidingWindow}>Edit course</DropdownItem>
         <DropdownItem onClick={openSlidingWindow}>View course</DropdownItem>

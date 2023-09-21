@@ -18,7 +18,7 @@ const Element = styled.div`
   margin: 10px;
 `;
 
-const Index = () => {
+function Index() {
   return (
     <Container
       style={{
@@ -32,19 +32,22 @@ const Index = () => {
       <CardText style={{ paddingLeft: '80px' }}>
         <Heading>No.1 platform enabling happier learning journeys</Heading>
         <Text>
-          Skooly connects schools, educators & learners, enables easy collaboration to acheive their best - which is why
-          we are trusted by thousands of schools worldwide
+          Skooly connects schools, educators & learners, enables easy
+          collaboration to acheive their best - which is why we are trusted by
+          thousands of schools worldwide
         </Text>
       </CardText>
-      <CardText style={{ flexDirection: 'row', maxWidth: '50%', flexWrap: 'wrap' }}>
+      <CardText
+        style={{ flexDirection: 'row', maxWidth: '50%', flexWrap: 'wrap' }}
+      >
         {stats.map((ele, ind) => (
           <Element key={ind}>
-            <Stat value={ele} label={statLabels[ind]}></Stat>
+            <Stat value={ele} label={statLabels[ind]} />
           </Element>
         ))}
       </CardText>
     </Container>
   );
-};
+}
 
 export default Index;

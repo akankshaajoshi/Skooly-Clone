@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { postStudentData } from '@/lib/postData';
+
 const { faker } = require('@faker-js/faker');
 
 const AddStudentContainer = styled.div`
@@ -56,29 +57,29 @@ const RadioButton = styled.input`
 `;
 
 const Button = styled.button`
-background-color: blue;
-color: white;
-cursor: pointer;
-flex: 1;
-padding: 10px;
-margin: 10px;
-border: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  flex: 1;
+  padding: 10px;
+  margin: 10px;
+  border: none;
 
-&:hover{
-  background-color: #ccc;
-  color: blue;
-}
-`
+  &:hover {
+    background-color: #ccc;
+    color: blue;
+  }
+`;
 
 function AddStudent({ open, index }) {
   const navigate = useNavigate();
-  
+
   const [formData, setFormData] = useState({
     name: '',
     gender: '',
     ageGroup: '',
     status: '',
-    studentId: "TESSE"+faker.number.int(),
+    studentId: `TESSE${faker.number.int()}`,
     dob: '',
     mother: { email: '', number: '' },
     father: { email: '', number: '' },
@@ -110,13 +111,13 @@ function AddStudent({ open, index }) {
     // Add your update method here to handle form submission
     console.log('Form data:', formData);
     postStudentData(index, formData);
-    navigate("/register-school/preschool/dashboard/student");
+    navigate('/register-school/preschool/dashboard/student');
     // onClose();
   };
 
-  const handleCancel= () =>{
-    navigate("/register-school/preschool/dashboard/student");
-  }
+  const handleCancel = () => {
+    navigate('/register-school/preschool/dashboard/student');
+  };
 
   return (
     <AddStudentContainer style={{}} open={open}>
@@ -125,7 +126,13 @@ function AddStudent({ open, index }) {
         <Form onSubmit={handleSubmit}>
           <FormGroup>
             <Label htmlFor="name">Student Name:</Label>
-            <Input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} />
+            <Input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+            />
           </FormGroup>
 
           <FormGroup>
@@ -225,11 +232,23 @@ function AddStudent({ open, index }) {
           </FormGroup>
           <FormGroup>
             <Label htmlFor="dob">Date of Birth: </Label>
-            <Input type="date" id="dob" name="dob" value={formData.dob} onChange={handleInputChange} />
+            <Input
+              type="date"
+              id="dob"
+              name="dob"
+              value={formData.dob}
+              onChange={handleInputChange}
+            />
           </FormGroup>
           <FormGroup>
             <Label htmlFor="branch">Select Branch:</Label>
-            <Input as="select" id="Branch" name="Branch" value={formData.Branch} onChange={handleInputChange}>
+            <Input
+              as="select"
+              id="Branch"
+              name="Branch"
+              value={formData.Branch}
+              onChange={handleInputChange}
+            >
               <option value="">Select Branch</option>
               <option value="Main">Main</option>
               <option value="Other">Other</option>
@@ -279,7 +298,7 @@ function AddStudent({ open, index }) {
             <Button type="submit">Add student</Button>
             <Button type="button" onClick={handleCancel}>
               Cancel
-            </Button> 
+            </Button>
           </FormGroup>
         </Form>
       </SlidingWindowContent>

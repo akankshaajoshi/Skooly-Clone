@@ -13,11 +13,22 @@ export const navItems = [
   ['/login', 'Login'],
 ];
 
-export const hamburgerItems = ['Download app', 'Contact support', 'English', 'Add New'];
+export const hamburgerItems = [
+  'Download app',
+  'Contact support',
+  'English',
+  'Add New',
+];
 
 export const downloads = [
-  ['https://play.google.com/store/apps/details?id=com.skooly.app&pli=1', 'Download it on the Play store'],
-  ['https://apps.apple.com/us/app/skooly-messenger-for-teachers/id1153385847', 'Get it on the App store'],
+  [
+    'https://play.google.com/store/apps/details?id=com.skooly.app&pli=1',
+    'Download it on the Play store',
+  ],
+  [
+    'https://apps.apple.com/us/app/skooly-messenger-for-teachers/id1153385847',
+    'Get it on the App store',
+  ],
 ];
 
 export const schoolTypes = [
@@ -33,19 +44,32 @@ export const schoolTypes = [
 
 export const stats = [25, 15, 5000, 20000];
 
-export const statLabels = ['Countries', 'worth payments processed', 'Schools', 'Teachers & Coaches'];
+export const statLabels = [
+  'Countries',
+  'worth payments processed',
+  'Schools',
+  'Teachers & Coaches',
+];
 
-export const about = [['https://getskooly.com/schools/en/support.html', 'Customer Support']];
+export const about = [
+  ['https://getskooly.com/schools/en/support.html', 'Customer Support'],
+];
 
 export const schoolsAndBusinesses = [
   ['https://getskooly.com/schools/en/', 'For schools'],
-  ['https://getskooly.com/schools/en/pricing-academies-and-schools.html', 'Pricing'],
+  [
+    'https://getskooly.com/schools/en/pricing-academies-and-schools.html',
+    'Pricing',
+  ],
   ['https://getskooly.com/schools/en/support.html', 'For partners'],
   ['https://getskooly.com/schools/en/schedule-a-demo.html', 'Schedule a Demo'],
 ];
 
 export const legal = [
-  ['https://getskooly.com/schools/en/terms-and-conditions.html', 'Terms of Service'],
+  [
+    'https://getskooly.com/schools/en/terms-and-conditions.html',
+    'Terms of Service',
+  ],
   ['https://getskooly.com/schools/en/privacy-policy.html', 'Privacy Policy'],
 ];
 
@@ -57,14 +81,39 @@ export const userOnboarding = [
     onlineschool,
     '/register-school/online-school',
   ],
-  ['Preschool', 'Daycare, Nurseries, or Childcare', preschool, '/register-school/preschool'],
-  ['School', 'Regular day schools, Sunday schools, K12 Schools', school, '/register-school/school'],
+  [
+    'Preschool',
+    'Daycare, Nurseries, or Childcare',
+    preschool,
+    '/register-school/preschool',
+  ],
+  [
+    'School',
+    'Regular day schools, Sunday schools, K12 Schools',
+    school,
+    '/register-school/school',
+  ],
 ];
 
 export const onboardingCards = [
-  ['Add course', 'Add courses and setup fees to get started.', course, "/register-school/preschool/dashboard/course"],
-  ['Add schedule', 'Do you want to add schedules ?', schedule, "/register-school/preschool/dashboard/schedule"],
-  ['Enroll your first student', 'Enroll students to the courses.', enroll, "/register-school/preschool/dashboard/student"],
+  [
+    'Add course',
+    'Add courses and setup fees to get started.',
+    course,
+    '/register-school/preschool/dashboard/course',
+  ],
+  [
+    'Add schedule',
+    'Do you want to add schedules ?',
+    schedule,
+    '/register-school/preschool/dashboard/schedule',
+  ],
+  [
+    'Enroll your first student',
+    'Enroll students to the courses.',
+    enroll,
+    '/register-school/preschool/dashboard/student',
+  ],
 ];
 
 export const remainingCards = [
@@ -85,28 +134,35 @@ export const timelineData = [
 
 export const details = [
   {
-    header: "Type of education offered",
-    content: "Online School"
-  },  {
-    header: "Institution's Contact No",
-    content: "Institution Number is "
-  },  {
-    header: "Website",
-    content: ""
-  },  {
-    header: "Billing Details",
-    content: ""
-  },  {
-    header: "Timezone",
-    content: "Timezone is "
-  },  {
-    header: "Currency",
-    content: "Currency is "
-  },{
-    header: "School Address",
-    content: ""
-  },{
-    header: "Deactivate account",
-    content: ""
+    header: 'Type of education offered',
+    content: 'Online School',
   },
-]
+  {
+    header: "Institution's Contact No",
+    content: 'Institution Number is ',
+  },
+  {
+    header: 'Website',
+    content: '',
+  },
+  {
+    header: 'Billing Details',
+    content: '',
+  },
+  {
+    header: 'Timezone',
+    content: 'Timezone is ',
+  },
+  {
+    header: 'Currency',
+    content: 'Currency is ',
+  },
+  {
+    header: 'School Address',
+    content: '',
+  },
+  {
+    header: 'Deactivate account',
+    content: '',
+  },
+];

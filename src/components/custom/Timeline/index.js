@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {timelineData} from "@/utils/constants";
+import { timelineData } from '@/utils/constants';
 
 const TimelineContainer = styled.div`
   display: flex;
@@ -30,20 +30,17 @@ const TimelineDot = styled.div`
   position: relative;
 `;
 
-
 const TimelineContent = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
 function Timeline() {
-
   return (
     <TimelineContainer>
       {timelineData.map((event, index) => (
         <TimelineEvent key={index}>
-          <TimelineDot>{event[0]}
-          </TimelineDot>
+          <TimelineDot>{event[0]}</TimelineDot>
           <TimelineContent>
             <h3>{event[1]}</h3>
           </TimelineContent>

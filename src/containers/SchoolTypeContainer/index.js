@@ -33,19 +33,17 @@ const Element = styled.div`
   }
 `;
 
-const index = () => {
-  return (
-    <Container style={{ backgroundColor: `${colors.quaternary}` }}>
-      <Heading>Pick your school type to get started</Heading>
-      <ElementContainer>
-        {schoolTypes.map((ele) => (
-          <StyledLink to={ele[0]}>
-            <Element>{ele[1]}</Element>{' '}
-          </StyledLink>
-        ))}
-      </ElementContainer>
-    </Container>
-  );
-};
+const index = () => (
+  <Container style={{ backgroundColor: `${colors.quaternary}` }}>
+    <Heading>Pick your school type to get started</Heading>
+    <ElementContainer>
+      {schoolTypes.map((ele) => (
+        <StyledLink to={ele[0]}>
+          <Element>{ele[1]}</Element>{' '}
+        </StyledLink>
+      ))}
+    </ElementContainer>
+  </Container>
+);
 
 export default index;

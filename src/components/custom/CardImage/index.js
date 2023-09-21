@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+
 export const CardImage = styled.img`
   display: flex;
   align-self: center;
