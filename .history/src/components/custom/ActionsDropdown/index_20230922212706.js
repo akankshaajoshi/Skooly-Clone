@@ -41,7 +41,7 @@ function ActionsDropdown({ data, index }) {
   };
 
   const openSlidingWindow = () => {
-    setIsOpen(false);
+    setIsOpen(false); // Close the dropdown when opening the sliding window
     setShowSlidingWindow(true);
   };
 

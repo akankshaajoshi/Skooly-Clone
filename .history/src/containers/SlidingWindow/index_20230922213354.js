@@ -97,7 +97,7 @@ function SlidingWindow({ open, onClose, data, index }) {
     e.preventDefault();
     mutation.mutateAsync({
       index,
-      data: formData,
+      formData,
     });
     onClose();
   };

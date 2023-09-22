@@ -93,8 +93,12 @@ function FilterableTable() {
       ...filter,
       name: '',
     });
-    await mutation.mutateAsync(studentId);
-    console.log('deleted', studentId);
+    try {
+      await mutation.mutateAsync(studentId);
+      console.log('deleted', studentId);
+    } catch (error) {
+      console.error('Error deleting students:', error);
+    }
   };
 
   const filteredStudents = fakeStudents

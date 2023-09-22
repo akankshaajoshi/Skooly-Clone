@@ -71,7 +71,7 @@ const Checkbox = styled.input`
 `;
 
 function SlidingWindow({ open, onClose, data, index }) {
-  const { mutation } = usePatchCourse();
+  const { mutation } = usePostCourse();
 
   const [formData, setFormData] = useState({
     id: index,
@@ -97,7 +97,7 @@ function SlidingWindow({ open, onClose, data, index }) {
     e.preventDefault();
     mutation.mutateAsync({
       index,
-      data: formData,
+      formData,
     });
     onClose();
   };
