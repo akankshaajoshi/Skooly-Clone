@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import SlidingWindow from '@/containers/SlidingWindow';
 
@@ -41,7 +41,7 @@ function ActionsDropdown({ data, index }) {
   };
 
   const openSlidingWindow = () => {
-    setIsOpen(false);
+    setIsOpen(false); // Close the dropdown when opening the sliding window
     setShowSlidingWindow(true);
   };
 

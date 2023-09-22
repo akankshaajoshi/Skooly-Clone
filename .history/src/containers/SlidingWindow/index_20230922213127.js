@@ -1,6 +1,7 @@
-import { useState } from 'react';
 import styled from 'styled-components';
-import usePatchCourse from '@/hooks/usePatchCourse';
+import { useState } from 'react';
+import { updateCourseData } from '@/lib/updateData';
+import { usePostCourse } from '@/hooks/usePostCourse';
 
 const SlidingWindowContainer = styled.div`
   position: fixed;
@@ -71,8 +72,6 @@ const Checkbox = styled.input`
 `;
 
 function SlidingWindow({ open, onClose, data, index }) {
-  const { mutation } = usePatchCourse();
-
   const [formData, setFormData] = useState({
     id: index,
     courseName: '',
@@ -93,12 +92,10 @@ function SlidingWindow({ open, onClose, data, index }) {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    mutation.mutateAsync({
-      index,
-      data: formData,
-    });
+    // Add your update method here to handle form submission
+    updateCourseData(index, formData);
     onClose();
   };
 

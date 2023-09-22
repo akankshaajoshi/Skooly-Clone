@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import ActionsDropdown from '@/components/custom/ActionsDropdown';
-import useFetchCourse from '@/hooks/useFetchCourse';
+import useFetchCourse from '@/lib/useFetchCourse';
 
 const LoadingContainer = styled.div`
   width: 100%;

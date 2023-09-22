@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { deleteStudentData } from '@/lib/deleteData';
 import useFetchStudent from '@/hooks/useFetchStudent';
 import useDeleteStudent from '../../hooks/useDeleteStudent';
 
@@ -45,6 +46,35 @@ const Th = styled.th`
 const Td = styled.td`
   padding: 10px;
   border-bottom: 1px solid #ccc;
+`;
+
+const DeletePopup = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: ${({ show }) => (show ? 'block' : 'none')};
+`;
+
+const DeleteButton = styled.button`
+  background-color: red;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+`;
+
+const DangerButton = styled.button`
+  background-color: red;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+  cursor: pointer;
 `;
 
 const Select = styled.select`
@@ -93,8 +123,12 @@ function FilterableTable() {
       ...filter,
       name: '',
     });
-    await mutation.mutateAsync(studentId);
-    console.log('deleted', studentId);
+    try {
+      await mutation.mutateAsync(studentId);
+      console.log('deleted', studentId);
+    } catch (error) {
+      console.error('Error deleting students:', error);
+    }
   };
 
   const filteredStudents = fakeStudents

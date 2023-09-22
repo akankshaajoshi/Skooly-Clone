@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { deleteStudentData } from '@/lib/deleteData';
 import useFetchStudent from '@/hooks/useFetchStudent';
-import useDeleteStudent from '../../hooks/useDeleteStudent';
+import useDeleteStudent from '@/hooks/useDeleteStudent';
 
 const { faker } = require('@faker-js/faker');
 
@@ -18,7 +19,7 @@ const ErrorContainer = styled.div`
 `;
 
 const FilterableTableContainer = styled.div`
-  width: 100%;
+  width: 100%; /* Ensure the container spans the full width */
   padding: 30px;
 `;
 
@@ -29,7 +30,7 @@ const Input = styled.input`
 `;
 
 const Table = styled.table`
-  width: 100%;
+  width: 100%; /* Make the table span the full width */
   border-collapse: collapse;
 `;
 
@@ -45,6 +46,35 @@ const Th = styled.th`
 const Td = styled.td`
   padding: 10px;
   border-bottom: 1px solid #ccc;
+`;
+
+const DeletePopup = styled.div`
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: ${({ show }) => (show ? 'block' : 'none')};
+`;
+
+const DeleteButton = styled.button`
+  background-color: red;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+`;
+
+const DangerButton = styled.button`
+  background-color: red;
+  border: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: white;
+  cursor: pointer;
 `;
 
 const Select = styled.select`
@@ -80,6 +110,8 @@ function FilterableTable() {
     father: { email: '', number: '' },
   });
 
+  const [selectedRows, setSelectedRows] = useState([]);
+
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilter({
@@ -88,13 +120,24 @@ function FilterableTable() {
     });
   };
 
-  const handleDeleteClick = async (studentId) => {
-    setFilter({
-      ...filter,
-      name: '',
-    });
-    await mutation.mutateAsync(studentId);
-    console.log('deleted', studentId);
+  const handleCheckboxChange = (studentName) => {
+    if (selectedRows.includes(studentName)) {
+      setSelectedRows(selectedRows.filter((name) => name !== studentName));
+    } else {
+      setSelectedRows([...selectedRows, studentName]);
+    }
+  };
+
+  const handleDeleteStudent = async (studentId) => {
+    try {
+      await mutation.mutateAsync(studentId);
+      setFilter({
+        ...filter,
+        name: '',
+      });
+    } catch (error) {
+      console.error('Error deleting student:', error);
+    }
   };
 
   const filteredStudents = fakeStudents
@@ -117,11 +160,7 @@ function FilterableTable() {
     <FilterableTableContainer>
       <h1>Enroll students: </h1>
       <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          marginBottom: '10px',
-        }}
+        style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}
       >
         <Input
           type="text"
@@ -152,6 +191,7 @@ function FilterableTable() {
           <option value="">All Genders</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
+          {/* Add more options as needed */}
         </Select>
         <Select
           name="branches"
@@ -161,6 +201,7 @@ function FilterableTable() {
           <option value="">All Branches</option>
           <option value="Main">Main</option>
           <option value="Other">Other</option>
+          {/* Add more options as needed */}
         </Select>
       </div>
       {isLoading && <LoadingContainer>Loading...</LoadingContainer>}
@@ -174,18 +215,26 @@ function FilterableTable() {
         <Table>
           <TableHead>
             <tr>
+              <Th>Select</Th>
               <Th>Student Id</Th>
               <Th>Name</Th>
               <Th>Gender</Th>
               <Th>Age Group</Th>
               <Th>Status</Th>
               <Th>Date of Birth</Th>
-              <Th>Action</Th>
+              <Th>Action</Th> {/* Add a new table header for actions */}
             </tr>
           </TableHead>
           <tbody>
             {filteredStudents.map((student, index) => (
               <tr key={index}>
+                <Td>
+                  <input
+                    type="checkbox"
+                    checked={selectedRows.includes(student.name)}
+                    onChange={() => handleCheckboxChange(student.name)}
+                  />
+                </Td>
                 <Td>{student.studentId}</Td>
                 <Td>{student.name}</Td>
                 <Td>{student.gender}</Td>
@@ -194,7 +243,7 @@ function FilterableTable() {
                 <Td>{student.dob}</Td>
                 <Td>
                   <Button
-                    onClick={() => handleDeleteClick(student.id)}
+                    onClick={() => handleDeleteStudent(student.id)}
                     style={{ backgroundColor: 'red', color: '#fff' }}
                   >
                     Delete

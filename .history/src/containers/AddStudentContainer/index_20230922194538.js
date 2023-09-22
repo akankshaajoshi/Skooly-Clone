@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import usePostStudent from '@/hooks/usePostStudent';
+import { postStudentData } from '@/hooks/postData';
 
 const { faker } = require('@faker-js/faker');
 
@@ -73,7 +73,7 @@ const Button = styled.button`
 
 function AddStudent({ open, index }) {
   const navigate = useNavigate();
-  const { mutation } = usePostStudent();
+
   const [formData, setFormData] = useState({
     name: '',
     gender: '',
@@ -106,15 +106,12 @@ function AddStudent({ open, index }) {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // Add your update method here to handle form submission
-    try {
-      await mutation.mutateAsync(formData);
-      navigate('/register-school/preschool/dashboard/student');
-    } catch (e) {
-      console.log(e);
-    }
+    console.log('Form data:', formData);
+    postStudentData(index, formData);
+    navigate('/register-school/preschool/dashboard/student');
     // onClose();
   };
 

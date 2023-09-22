@@ -96,7 +96,7 @@ function SlidingWindow({ open, onClose, data, index }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     mutation.mutateAsync({
-      index,
+      index: index,
       data: formData,
     });
     onClose();
