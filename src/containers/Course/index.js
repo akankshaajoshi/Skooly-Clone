@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { useQuery } from 'react-query';
 import styled from 'styled-components';
-import { fetchCourseData } from '@/lib/fetchData';
 import ActionsDropdown from '@/components/custom/ActionsDropdown';
+import useFetchCourse from '@/lib/useFetchCourse';
 
 const LoadingContainer = styled.div`
   width: 100%;
@@ -79,12 +78,7 @@ const Select = styled.select`
 `;
 
 function FilterableTable() {
-  const {
-    data: fakeCourses,
-    isLoading,
-    isError,
-    error,
-  } = useQuery('courseData', fetchCourseData);
+  const { fakeCourses, isLoading, isError, error } = useFetchCourse();
   const [filter, setFilter] = useState({
     courseName: '',
     classType: '',

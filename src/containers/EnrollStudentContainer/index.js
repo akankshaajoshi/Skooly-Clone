@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { useQuery } from 'react-query';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { fetchStudentData } from '@/lib/fetchData';
 import { deleteStudentData } from '@/lib/deleteData';
+import useFetchStudent from '@/lib/useFetchStudent';
 
 const { faker } = require('@faker-js/faker');
 
@@ -96,12 +95,7 @@ const Button = styled.button`
 `;
 
 function FilterableTable() {
-  const {
-    data: fakeStudents,
-    isLoading,
-    isError,
-    error,
-  } = useQuery('studentData', fetchStudentData);
+  const { fakeStudents, isLoading, isError, error } = useFetchStudent();
   const [filter, setFilter] = useState({
     name: '',
     gender: '',
