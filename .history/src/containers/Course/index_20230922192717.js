@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { deleteStudentData } from '@/lib/deleteData';
-import useFetchStudent from '@/hooks/useFetchStudent';
-
-const { faker } = require('@faker-js/faker');
+import ActionsDropdown from '@/components/custom/ActionsDropdown';
+import useFetchCourse from '@/lib/useFetchCourse';
 
 const LoadingContainer = styled.div`
   width: 100%;
@@ -80,31 +77,14 @@ const Select = styled.select`
   padding: 6px;
 `;
 
-const Button = styled.button`
-  padding: 8px;
-  background: blue;
-  color: white;
-  border: none;
-  cursor: pointer;
-  min-width: 120px;
-
-  &:hover {
-    background: black;
-    color: white;
-  }
-`;
-
 function FilterableTable() {
-  const { fakeStudents, isLoading, isError, error } = useFetchStudent();
+  const { fakeCourses, isLoading, isError, error } = useFetchCourse();
   const [filter, setFilter] = useState({
-    name: '',
-    gender: '',
-    ageGroup: '',
-    status: '',
-    studentId: `TESSE${faker.number.int()}`,
-    dob: '',
-    mother: { email: '', number: '' },
-    father: { email: '', number: '' },
+    courseName: '',
+    classType: '',
+    category: '',
+    pricingOption: '',
+    branches: '',
   });
 
   const [selectedRows, setSelectedRows] = useState([]);
@@ -118,91 +98,75 @@ function FilterableTable() {
     });
   };
 
-  const handleCheckboxChange = (studentName) => {
-    if (selectedRows.includes(studentName)) {
-      setSelectedRows(selectedRows.filter((name) => name !== studentName));
+  const handleCheckboxChange = (courseName) => {
+    if (selectedRows.includes(courseName)) {
+      setSelectedRows(selectedRows.filter((name) => name !== courseName));
     } else {
-      setSelectedRows([...selectedRows, studentName]);
+      setSelectedRows([...selectedRows, courseName]);
     }
   };
 
   const handleDeleteClick = () => {
-    if (selectedRows.length === 0) {
-      // No rows selected, do nothing
-      return;
-    }
-
-    const selectedStudentIds = selectedRows.map((studentName) => {
-      const selectedStudent = fakeStudents.find(
-        (student) => student.name === studentName,
-      );
-      return selectedStudent ? selectedStudent.id : null;
-    });
-
-    setFilter({
-      ...filter,
-      name: '',
-    }); // Reset the filter to clear the search results
     setSelectedRows([]);
     setShowDeletePopup(false);
-    console.log(selectedStudentIds);
-    deleteStudentData(selectedStudentIds);
-
-    // Update the state with the filtered data (excluding the deleted rows)
   };
 
-  const filteredStudents = fakeStudents
-    ? fakeStudents.filter(
-        (student) =>
-          student.name
+  const filteredCourses = fakeCourses
+    ? fakeCourses.filter(
+        (course) =>
+          course.courseName
             .toLowerCase()
-            .startsWith(filter.name.toString().toLowerCase()) &&
-          student.status
-            .toLowerCase()
-            .startsWith(filter.status.toString().toLowerCase()) &&
-          student.gender
+            .startsWith(filter.courseName.toString().toLowerCase()) &&
+          course.classType
             .toString()
             .toLowerCase()
-            .startsWith(filter.gender.toString().toLowerCase()),
+            .startsWith(filter.classType.toString().toLowerCase()) &&
+          course.category
+            .toString()
+            .toLowerCase()
+            .startsWith(filter.category.toString().toLowerCase()) &&
+          course.pricingOption
+            .toString()
+            .toLowerCase()
+            .startsWith(filter.pricingOption.toString().toLowerCase()) &&
+          course.branches
+            .toString()
+            .toLowerCase()
+            .startsWith(filter.branches.toString().toLowerCase()),
       )
     : [];
 
   return (
     <FilterableTableContainer>
-      <h1>Enroll students: </h1>
+      <h1>Courses</h1>
       <div
         style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}
       >
         <Input
           type="text"
-          placeholder="Filter by Name"
-          name="name"
-          value={filter.name}
+          placeholder="Filter by Course Name"
+          name="courseName"
+          value={filter.courseName}
           onChange={handleFilterChange}
         />
-        <Link to="/register-school/preschool/dashboard/addstudent">
-          <Button>Add Student</Button>
-        </Link>
-        <Select
-          name="status"
-          value={filter.status}
-          onChange={handleFilterChange}
-        >
-          <option value="">All Status</option>
-          <option value="Active">Active</option>
-          <option value="New">New</option>
-          <option value="Waitlisted">Waitlisted</option>
-        </Select>
 
         <Select
-          name="gender"
-          value={filter.gender}
+          name="category"
+          value={filter.category}
           onChange={handleFilterChange}
         >
-          <option value="">All Genders</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-          {/* Add more options as needed */}
+          <option value="">All Category Types</option>
+          <option value="Preschool">Preschool</option>
+          <option value="Online School">Online School</option>
+        </Select>
+        <Select
+          name="classType"
+          value={filter.classType}
+          onChange={handleFilterChange}
+        >
+          <option value="">All Class Types</option>
+          <option value="One to one">One to one</option>
+          <option value="Group">Group</option>
         </Select>
         <Select
           name="branches"
@@ -212,7 +176,6 @@ function FilterableTable() {
           <option value="">All Branches</option>
           <option value="Main">Main</option>
           <option value="Other">Other</option>
-          {/* Add more options as needed */}
         </Select>
       </div>
       {isLoading && <LoadingContainer>Loading...</LoadingContainer>}
@@ -237,31 +200,32 @@ function FilterableTable() {
             <TableHead>
               <tr>
                 <Th>Select</Th>
-                <Th>Student Id</Th>
-                <Th>Name</Th>
-                <Th>Gender</Th>
-                <Th>Age Group</Th>
-                <Th>Status</Th>
-                <Th>Date of Birth</Th>
+                <Th>Course Name</Th>
+                <Th>Class Type</Th>
+                <Th>Category</Th>
+                <Th>Pricing Option</Th>
+                <Th>Branches</Th>
+                <Th>Action</Th>
               </tr>
             </TableHead>
             <tbody>
-              {filteredStudents.map((student, index) => (
+              {filteredCourses.map((course, index) => (
                 <tr key={index}>
                   <Td>
                     <input
                       type="checkbox"
-                      checked={selectedRows.includes(student.name)}
-                      onChange={() => handleCheckboxChange(student.name)}
+                      checked={selectedRows.includes(course.courseName)}
+                      onChange={() => handleCheckboxChange(course.courseName)}
                     />
                   </Td>
-                  <Td>{student.studentId}</Td>
-                  <Td>{student.name}</Td>
-                  <Td>{student.gender}</Td>
-                  <Td>{student.ageGroup}</Td>
-                  <Td>{student.status}</Td>
-                  <Td>{student.dob}</Td>
-                  <Td />
+                  <Td>{course.courseName}</Td>
+                  <Td>{course.classType}</Td>
+                  <Td>{course.category}</Td>
+                  <Td>{course.pricingOption}</Td>
+                  <Td>{course.branches}</Td>
+                  <Td>
+                    <ActionsDropdown data={course} index={index} />
+                  </Td>
                 </tr>
               ))}
             </tbody>

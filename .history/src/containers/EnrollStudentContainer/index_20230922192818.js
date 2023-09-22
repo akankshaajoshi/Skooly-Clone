@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { deleteStudentData } from '@/lib/deleteData';
-import useFetchStudent from '@/hooks/useFetchStudent';
+import useFetchStudent from '@/lib/useFetchStudent';
 
 const { faker } = require('@faker-js/faker');
 
