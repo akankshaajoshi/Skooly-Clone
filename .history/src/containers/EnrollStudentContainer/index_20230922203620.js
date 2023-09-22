@@ -19,7 +19,7 @@ const ErrorContainer = styled.div`
 `;
 
 const FilterableTableContainer = styled.div`
-  width: 100%;
+  width: 100%; /* Ensure the container spans the full width */
   padding: 30px;
 `;
 
@@ -30,7 +30,7 @@ const Input = styled.input`
 `;
 
 const Table = styled.table`
-  width: 100%;
+  width: 100%; /* Make the table span the full width */
   border-collapse: collapse;
 `;
 
@@ -129,7 +129,7 @@ function FilterableTable() {
     }
   };
 
-  const handleDeleteClick = async () => {
+  const handleDeleteClick = () => {
     if (selectedRows.length === 0) {
       return;
     }
@@ -144,15 +144,12 @@ function FilterableTable() {
     setFilter({
       ...filter,
       name: '',
-    });
-
-    try {
-      await mutation.mutateAsync(selectedStudentIds);
-      console.log('deleted', selectedStudentIds);
-      setSelectedRows([]);
-    } catch (error) {
-      console.error('Error deleting students:', error);
-    }
+    }); // Reset the filter to clear the search results
+    setSelectedRows([]);
+    setShowDeletePopup(false);
+    console.log(selectedStudentIds);
+    mutation.mutateAsync(selectedStudentIds);
+    // Update the state with the filtered data (excluding the deleted rows)
   };
 
   const filteredStudents = fakeStudents
@@ -175,11 +172,7 @@ function FilterableTable() {
     <FilterableTableContainer>
       <h1>Enroll students: </h1>
       <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          marginBottom: '10px',
-        }}
+        style={{ display: 'flex', alignItems: 'center', marginBottom: '10px' }}
       >
         <Input
           type="text"
@@ -210,6 +203,7 @@ function FilterableTable() {
           <option value="">All Genders</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
+          {/* Add more options as needed */}
         </Select>
         <Select
           name="branches"
@@ -219,6 +213,7 @@ function FilterableTable() {
           <option value="">All Branches</option>
           <option value="Main">Main</option>
           <option value="Other">Other</option>
+          {/* Add more options as needed */}
         </Select>
       </div>
       {isLoading && <LoadingContainer>Loading...</LoadingContainer>}
@@ -229,39 +224,50 @@ function FilterableTable() {
         </ErrorContainer>
       )}
       {!isLoading && !isError && (
-        <Table>
-          <TableHead>
-            <tr>
-              <Th>Student Id</Th>
-              <Th>Name</Th>
-              <Th>Gender</Th>
-              <Th>Age Group</Th>
-              <Th>Status</Th>
-              <Th>Date of Birth</Th>
-              <Th>Action</Th>
-            </tr>
-          </TableHead>
-          <tbody>
-            {filteredStudents.map((student, index) => (
-              <tr key={index}>
-                <Td>{student.studentId}</Td>
-                <Td>{student.name}</Td>
-                <Td>{student.gender}</Td>
-                <Td>{student.ageGroup}</Td>
-                <Td>{student.status}</Td>
-                <Td>{student.dob}</Td>
-                <Td>
-                  <Button
-                    onClick={() => handleDeleteClick(student.id)}
-                    style={{ backgroundColor: 'red', color: '#fff' }}
-                  >
-                    Delete
-                  </Button>
-                </Td>
+        <>
+          <DeletePopup show={showDeletePopup}>
+            <p>Are you sure you want to delete the selected row(s)?</p>
+            <DeleteButton onClick={handleDeleteClick}>Delete</DeleteButton>
+          </DeletePopup>
+          {selectedRows.length > 0 && (
+            <DangerButton onClick={() => setShowDeletePopup(true)}>
+              Delete Selected
+            </DangerButton>
+          )}
+          <Table>
+            <TableHead>
+              <tr>
+                <Th>Select</Th>
+                <Th>Student Id</Th>
+                <Th>Name</Th>
+                <Th>Gender</Th>
+                <Th>Age Group</Th>
+                <Th>Status</Th>
+                <Th>Date of Birth</Th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </TableHead>
+            <tbody>
+              {filteredStudents.map((student, index) => (
+                <tr key={index}>
+                  <Td>
+                    <input
+                      type="checkbox"
+                      checked={selectedRows.includes(student.name)}
+                      onChange={() => handleCheckboxChange(student.name)}
+                    />
+                  </Td>
+                  <Td>{student.studentId}</Td>
+                  <Td>{student.name}</Td>
+                  <Td>{student.gender}</Td>
+                  <Td>{student.ageGroup}</Td>
+                  <Td>{student.status}</Td>
+                  <Td>{student.dob}</Td>
+                  <Td />
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </>
       )}
     </FilterableTableContainer>
   );

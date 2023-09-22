@@ -148,7 +148,6 @@ function FilterableTable() {
 
     try {
       await mutation.mutateAsync(selectedStudentIds);
-      console.log('deleted', selectedStudentIds);
       setSelectedRows([]);
     } catch (error) {
       console.error('Error deleting students:', error);

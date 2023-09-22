@@ -141,15 +141,22 @@ function FilterableTable() {
       return selectedStudent ? selectedStudent.id : null;
     });
 
-    setFilter({
-      ...filter,
-      name: '',
-    });
-
     try {
       await mutation.mutateAsync(selectedStudentIds);
-      console.log('deleted', selectedStudentIds);
+
+      // Update fakeStudents to remove the deleted students
+      const updatedStudents = fakeStudents.filter(
+        (student) => !selectedStudentIds.includes(student.id),
+      );
+      setFakeStudents(updatedStudents);
+
+      setFilter({
+        ...filter,
+        name: '',
+      });
+
       setSelectedRows([]);
+      setShowDeletePopup(false);
     } catch (error) {
       console.error('Error deleting students:', error);
     }
@@ -229,39 +236,50 @@ function FilterableTable() {
         </ErrorContainer>
       )}
       {!isLoading && !isError && (
-        <Table>
-          <TableHead>
-            <tr>
-              <Th>Student Id</Th>
-              <Th>Name</Th>
-              <Th>Gender</Th>
-              <Th>Age Group</Th>
-              <Th>Status</Th>
-              <Th>Date of Birth</Th>
-              <Th>Action</Th>
-            </tr>
-          </TableHead>
-          <tbody>
-            {filteredStudents.map((student, index) => (
-              <tr key={index}>
-                <Td>{student.studentId}</Td>
-                <Td>{student.name}</Td>
-                <Td>{student.gender}</Td>
-                <Td>{student.ageGroup}</Td>
-                <Td>{student.status}</Td>
-                <Td>{student.dob}</Td>
-                <Td>
-                  <Button
-                    onClick={() => handleDeleteClick(student.id)}
-                    style={{ backgroundColor: 'red', color: '#fff' }}
-                  >
-                    Delete
-                  </Button>
-                </Td>
+        <>
+          <DeletePopup show={showDeletePopup}>
+            <p>Are you sure you want to delete the selected row(s)?</p>
+            <DeleteButton onClick={handleDeleteClick}>Delete</DeleteButton>
+          </DeletePopup>
+          {selectedRows.length > 0 && (
+            <DangerButton onClick={() => setShowDeletePopup(true)}>
+              Delete Selected
+            </DangerButton>
+          )}
+          <Table>
+            <TableHead>
+              <tr>
+                <Th>Student Id</Th>
+                <Th>Name</Th>
+                <Th>Gender</Th>
+                <Th>Age Group</Th>
+                <Th>Status</Th>
+                <Th>Date of Birth</Th>
+                <Th>Action</Th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </TableHead>
+            <tbody>
+              {filteredStudents.map((student, index) => (
+                <tr key={index}>
+                  <Td>{student.studentId}</Td>
+                  <Td>{student.name}</Td>
+                  <Td>{student.gender}</Td>
+                  <Td>{student.ageGroup}</Td>
+                  <Td>{student.status}</Td>
+                  <Td>{student.dob}</Td>
+                  <Td>
+                    <Button
+                      onClick={() => handleDeleteClick(student.id)}
+                      style={{ backgroundColor: 'red', color: '#fff' }}
+                    >
+                      Delete
+                    </Button>
+                  </Td>
+                </tr>
+              ))}
+            </tbody>
+          </Table>
+        </>
       )}
     </FilterableTableContainer>
   );
