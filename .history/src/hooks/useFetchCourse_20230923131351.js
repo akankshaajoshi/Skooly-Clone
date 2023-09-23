@@ -2,8 +2,12 @@ import axios from 'axios';
 import { useQuery } from 'react-query';
 
 const fetchCourseData = async () => {
-  const response = await axios.get('http://localhost:8080/courses');
-  return response.data;
+  try {
+    const response = await axios.get('http://localhost:8080/courses');
+    return response.data;
+  } catch (error) {
+    return 'Error in fetching data';
+  }
 };
 
 const useFetchCourse = () => {

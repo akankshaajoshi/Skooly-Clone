@@ -631,6 +631,24 @@
         "email": "Jarrod_Stehr@yahoo.com",
         "number": "(322) 685-0841"
       }
+    },
+    {
+      "name": "Akanksha Joshi",
+      "gender": "Female",
+      "ageGroup": "Adult",
+      "status": "Active",
+      "studentId": "TESSE6689277360472064",
+      "dob": "2023-09-06",
+      "mother": {
+        "email": "def@gmail.com",
+        "number": "3456789012"
+      },
+      "father": {
+        "email": "abc@gmail.com",
+        "number": "2345678901"
+      },
+      "Branch": "Other",
+      "id": 10
     }
   ]
 }
