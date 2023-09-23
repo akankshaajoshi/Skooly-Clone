@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import usePostStaff from '@/hooks/usePostStaff';
 
 const SlidingWindowContainer = styled.div`
@@ -60,6 +61,7 @@ const RadioButton = styled.input`
 `;
 
 function SlidingWindow({ open, onClose, index }) {
+  const navigate = useNavigate();
   const { mutation } = usePostStaff();
 
   const [formData, setFormData] = useState({
@@ -84,6 +86,7 @@ function SlidingWindow({ open, onClose, index }) {
     e.preventDefault();
     await mutation.mutateAsync(formData);
     onClose();
+    navigate('/register-school/preschool/dashboard/staff');
   };
 
   return (

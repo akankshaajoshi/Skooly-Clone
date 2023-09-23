@@ -4,12 +4,8 @@ import { postStaffData } from '@/lib/postData';
 
 const usePostStaff = () => {
   const queryClient = useQueryClient();
-  const mutation = useMutation({
-    mutationFn: postStaffData,
-    onSuccess: () => {
-      queryClient.invalidateQueries('staffData');
-    },
-  });
+
+  const mutation = useMutation({ mutationFn: postStaffData });
   return { mutation };
 };
 

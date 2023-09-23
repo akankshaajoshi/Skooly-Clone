@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useTable } from 'react-table';
+import { useQueryClient } from 'react-query';
 import styled from 'styled-components';
 import useFetchStaff from '@/hooks/useFetchStaff';
 import SlidingWindow from '@/containers/AddStaff';
@@ -49,7 +50,9 @@ const Button = styled.button`
 
 function Index() {
   const { fakeStaff, isLoading, isError, error } = useFetchStaff();
-  const data = useMemo(() => fakeStaff, [fakeStaff]);
+  const queryClient = useQueryClient();
+
+  const data = useMemo(() => fakeStaff, []);
   const columns = useMemo(
     () => [
       {

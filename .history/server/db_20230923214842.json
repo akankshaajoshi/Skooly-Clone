@@ -310,15 +310,11 @@
     },
     {
       "id": 1,
-      "courseName": "updated course 1",
+      "courseName": "brushing ah",
       "classType": "Group",
       "category": "Preschool",
       "pricingOption": "Free",
-      "branches": "Main",
-      "courseOffering": "duration",
-      "fixedCourseDate": false,
-      "startDate": "",
-      "endDate": ""
+      "branches": "Main"
     },
     {
       "id": 2,
@@ -875,14 +871,24 @@
       "billing": "Disable access"
     },
     {
-      "name": "new entry",
-      "email": "joshiaj33@gmail.com",
+      "name": "Akanksha Joshi",
+      "email": "hutao@gmail.com",
       "phone": "8630016893",
       "designation": "Intern",
       "location": "Other",
       "role": "Admin & Teaching",
       "billing": "View access",
       "id": 20
+    },
+    {
+      "name": "Akash",
+      "email": "hutao@gmail.com",
+      "phone": "8630016893",
+      "designation": "Intern",
+      "location": "Other",
+      "role": "Admin & Teaching",
+      "billing": "View access",
+      "id": 21
     }
   ]
 }

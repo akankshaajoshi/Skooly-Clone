@@ -6,10 +6,9 @@ const usePostStaff = () => {
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: postStaffData,
-    onSuccess: () => {
-      queryClient.invalidateQueries('staffData');
-    },
+    mutationKey: 'staffData',
   });
+  queryClient.invalidateQueries('staffData');
   return { mutation };
 };
 

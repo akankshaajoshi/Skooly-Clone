@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components';
 import usePostStaff from '@/hooks/usePostStaff';
+import { useQueryClient } from 'react-query';
 
 const SlidingWindowContainer = styled.div`
   position: fixed;
@@ -61,6 +62,7 @@ const RadioButton = styled.input`
 
 function SlidingWindow({ open, onClose, index }) {
   const { mutation } = usePostStaff();
+  const queryClient = useQueryClient();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -82,7 +84,9 @@ function SlidingWindow({ open, onClose, index }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await mutation.mutateAsync(formData);
+    await mutation.mutateAsync(formData, {
+      queryClient.invalidat
+    });
     onClose();
   };
 
