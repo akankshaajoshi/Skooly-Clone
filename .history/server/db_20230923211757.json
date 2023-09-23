@@ -851,16 +851,6 @@
       "location": "Main",
       "role": "Teaching",
       "billing": "Disable access"
-    },
-    {
-      "name": "Akanksha Joshi",
-      "email": "hutao@gmail.com",
-      "phone": "8630016893",
-      "designation": "Intern",
-      "location": "Other",
-      "role": "Admin & Teaching",
-      "billing": "View access",
-      "id": 20
     }
   ]
 }

@@ -48,8 +48,8 @@ const Button = styled.button`
 `;
 
 function Index() {
-  const { data: fakeStaff, isLoading, isError, error } = useFetchStaff();
-  const data = useMemo(() => fakeStaff, []);
+  const { fakeStaff, isLoading, isError, error } = useFetchStaff();
+  const data = useMemo(() => [[fakeStaff]], []);
   const columns = useMemo(
     () => [
       {
@@ -103,6 +103,7 @@ function Index() {
       <SlidingWindow
         open={showSlidingWindow}
         onClose={() => setShowSlidingWindow(false)}
+        index={21}
       />
       <Button onClick={openSlidingWindow}>Add staff</Button>
       {!isLoading && !isError && (

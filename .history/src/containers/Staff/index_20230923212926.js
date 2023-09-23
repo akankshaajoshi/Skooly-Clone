@@ -49,7 +49,7 @@ const Button = styled.button`
 
 function Index() {
   const { data: fakeStaff, isLoading, isError, error } = useFetchStaff();
-  const data = useMemo(() => fakeStaff, []);
+  const data = useMemo(() => fakeStaff, [fakeStaff]);
   const columns = useMemo(
     () => [
       {

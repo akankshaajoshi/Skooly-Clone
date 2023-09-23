@@ -3,7 +3,7 @@ import { useErrorBoundary } from 'react-error-boundary';
 import { useTable } from 'react-table';
 import styled from 'styled-components';
 import useFetchStaff from '@/hooks/useFetchStaff';
-import SlidingWindow from '@/containers/AddStaff';
+import { SlidingWindow } from '@/components/Staff/helpers';
 
 const Container = styled.div`
   width: 100%;
@@ -48,7 +48,7 @@ const Button = styled.button`
 `;
 
 function Index() {
-  const { data: fakeStaff, isLoading, isError, error } = useFetchStaff();
+  const { fakeStaff, isLoading, isError, error } = useFetchStaff();
   const data = useMemo(() => fakeStaff, []);
   const columns = useMemo(
     () => [
@@ -98,13 +98,17 @@ function Index() {
     setShowSlidingWindow(true);
   };
 
+  const handleSubmit = () => {
+    console.log('submitted!');
+  };
+
   return (
     <Container>
       <SlidingWindow
         open={showSlidingWindow}
         onClose={() => setShowSlidingWindow(false)}
       />
-      <Button onClick={openSlidingWindow}>Add staff</Button>
+      <Button onClick={handleSubmit}>Add staff</Button>
       {!isLoading && !isError && (
         <Table {...getTableProps()}>
           {error && showBoundary(error)}
