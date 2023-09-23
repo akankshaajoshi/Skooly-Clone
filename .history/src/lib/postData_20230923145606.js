@@ -9,7 +9,7 @@ export const postUserData = async (index, data) => {
   }
 };
 
-export const postCourseData = async (index, data) => {
+export const updateCourseData = async (index, data) => {
   try {
     await axios.post('http://localhost:8080/courses', data);
   } catch (error) {

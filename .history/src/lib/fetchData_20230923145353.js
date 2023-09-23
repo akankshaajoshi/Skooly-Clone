@@ -13,7 +13,6 @@ export async function fetchCourseData() {
   const response = await axios.get('http://localhost:8080/courses');
   return response.data;
 }
-
 export const fetchStudentData = async () => {
   const response = await axios.get('http://localhost:8080/students');
   return response.data;

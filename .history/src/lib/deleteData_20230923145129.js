@@ -18,7 +18,7 @@ export const deleteCourseData = async (index) => {
   }
 };
 
-export const deleteStudentData = async (studentIds) => {
+const deleteStudentData = async (studentIds) => {
   await axios.delete(`http://localhost:8080/students/${studentIds}`);
   console.log(`Deleted students with IDs: studentId`);
   return true;

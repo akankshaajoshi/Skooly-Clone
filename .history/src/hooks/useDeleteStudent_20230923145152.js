@@ -1,5 +1,6 @@
 import { useMutation } from 'react-query'; // Import the necessary library for mutations
-import { deleteStudentData } from '@/lib/deleteData';
+import axios from 'axios';
+import "deleteStudentData" from "@/lib/deleteData"
 
 const useDeleteStudent = () => {
   const mutation = useMutation(deleteStudentData);
