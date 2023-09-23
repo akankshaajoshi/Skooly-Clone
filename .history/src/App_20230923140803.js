@@ -11,6 +11,7 @@ function App() {
       onReset={() => {
         // reset the state of your app here
       }}
+      resetKeys={['someKey']}
       onError={(error, info) => {
         console.log('Caught an error: ', error, info);
       }}

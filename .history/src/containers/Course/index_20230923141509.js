@@ -136,7 +136,6 @@ function FilterableTable() {
             .startsWith(filter.branches.toString().toLowerCase()),
       )
     : [];
-
   const { showBoundary } = useErrorBoundary();
 
   return (

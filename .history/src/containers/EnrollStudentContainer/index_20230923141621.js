@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { useErrorBoundary } from 'react-error-boundary';
 import useFetchStudent from '@/hooks/useFetchStudent';
 import useDeleteStudent from '../../hooks/useDeleteStudent';
 
@@ -64,7 +63,6 @@ const Button = styled.button`
 function FilterableTable() {
   const { fakeStudents, isLoading, isError, error } = useFetchStudent();
   const { mutation } = useDeleteStudent();
-  const { showBoundary } = useErrorBoundary();
 
   const [filter, setFilter] = useState({
     name: '',
@@ -161,7 +159,12 @@ function FilterableTable() {
         </Select>
       </div>
       {isLoading && 'Loading...'}
-      {isError && showBoundary(error)}
+      {isError && (
+        <ErrorContainer>
+          Error:
+          {error.message}
+        </ErrorContainer>
+      )}
       {!isLoading && !isError && (
         <Table>
           <TableHead>

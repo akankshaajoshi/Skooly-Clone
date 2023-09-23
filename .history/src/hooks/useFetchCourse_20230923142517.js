@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { useQuery } from 'react-query';
+import { useErrorHandler } from 'react-error-boundary';
 
 const useFetchCourse = () => {
   async function fetchCourseData() {
     const response = await axios.get('http://localhost:8080/courses');
     return response.data;
   }
+  const handleError = useErrorHandler();
   const {
     data: fakeCourses,
     isLoading,

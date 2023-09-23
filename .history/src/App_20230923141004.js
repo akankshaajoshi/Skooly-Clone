@@ -1,10 +1,11 @@
-import { ErrorBoundary } from 'react-error-boundary';
+import { ErrorBoundary, useErrorBoundary } from 'react-error-boundary';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import AppRouter from '@/routes/AppRouter';
 import FallbackComponent from '@/utils/ErrorBoundary/FallbackComponent';
 
 function App() {
   const queryClient = new QueryClient();
+  const { showBoundary } = useErrorBoundary();
   return (
     <ErrorBoundary
       FallbackComponent={FallbackComponent}

@@ -21,7 +21,6 @@
   "rules": {
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"],
-    "react/function-component-definition": ["off"],
     "react/jsx-props-no-spreading": ["warn"],
     "no-shadow": ["off"],
     "import/extensions": ["off"],
@@ -35,6 +34,7 @@
     "import/no-extraneous-dependencies": ["off"],
     "react/jsx-no-constructed-context-values": ["off"],
     "react/jsx-filename-extension": ["off"],
-    "no-console": ["off"]
+    "no-console": ["off"],
+    "react/function-component-definiton": ["off"]
   }
 }

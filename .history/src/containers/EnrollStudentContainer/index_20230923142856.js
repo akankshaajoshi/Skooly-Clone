@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { useErrorBoundary } from 'react-error-boundary';
 import useFetchStudent from '@/hooks/useFetchStudent';
 import useDeleteStudent from '../../hooks/useDeleteStudent';
+import { useErrorBoundary } from 'react-error-boundary';
 
 const { faker } = require('@faker-js/faker');
 

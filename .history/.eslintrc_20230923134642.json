@@ -19,9 +19,9 @@
   },
   "plugins": ["react", "prettier"],
   "rules": {
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/jsx-uses-react": ["off"],
     "react/react-in-jsx-scope": ["off"],
-    "react/function-component-definition": ["off"],
     "react/jsx-props-no-spreading": ["warn"],
     "no-shadow": ["off"],
     "import/extensions": ["off"],

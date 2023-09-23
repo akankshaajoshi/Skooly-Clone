@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useErrorBoundary } from 'react-error-boundary';
 import styled from 'styled-components';
 import usePostStudent from '@/hooks/usePostStudent';
+import { useErrorBoundary } from 'react-error-boundary';
 
 const { faker } = require('@faker-js/faker');
 

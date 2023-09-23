@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useErrorBoundary } from 'react-error-boundary';
 import styled from 'styled-components';
 import ActionsDropdown from '@/components/custom/ActionsDropdown';
 import useFetchCourse from '@/hooks/useFetchCourse';
+import { useErrorBoundary } from 'react-error-boundary';
 
 const LoadingContainer = styled.div`
   width: 100%;
@@ -136,7 +136,6 @@ function FilterableTable() {
             .startsWith(filter.branches.toString().toLowerCase()),
       )
     : [];
-
   const { showBoundary } = useErrorBoundary();
 
   return (
@@ -182,7 +181,9 @@ function FilterableTable() {
         </Select>
       </div>
       {isLoading && <LoadingContainer>Loading...</LoadingContainer>}
-      {isError && showBoundary(error)}
+      {isError && 
+        showBoundary(err);
+      }
       {!isLoading && !isError && (
         <>
           <DeletePopup show={showDeletePopup}>
