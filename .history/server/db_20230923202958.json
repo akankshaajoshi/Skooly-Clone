@@ -1,0 +1,828 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "phoneNumber": "(225) 344-2523 x705",
+      "website": "https://wretched-jodhpurs.info",
+      "email": "Bridget_VonRueden@gmail.com",
+      "timezone": "Australia/Lindeman",
+      "currency": "SZL",
+      "schoolAddress": {
+        "street": "92723",
+        "city": "Mesa",
+        "state": "Arkansas",
+        "zipCode": "62798-1869"
+      }
+    },
+    {
+      "id": 2,
+      "phoneNumber": "(532) 476-5052 x1254",
+      "website": "https://rewarding-beck.org/",
+      "email": "Edmond.Walter@yahoo.com",
+      "timezone": "Asia/Vientiane",
+      "currency": "HKD",
+      "schoolAddress": {
+        "street": "774",
+        "city": "Purdyport",
+        "state": "Mississippi",
+        "zipCode": "39132-5484"
+      }
+    },
+    {
+      "id": 3,
+      "phoneNumber": "(365) 667-0003",
+      "website": "https://vicious-pension.name/",
+      "email": "Soledad_Rath21@yahoo.com",
+      "timezone": "America/Goose_Bay",
+      "currency": "SZL",
+      "schoolAddress": {
+        "street": "19863",
+        "city": "Clotildeburgh",
+        "state": "Mississippi",
+        "zipCode": "43677"
+      }
+    },
+    {
+      "id": 4,
+      "phoneNumber": "967.861.3130 x197",
+      "website": "https://eminent-detector.name/",
+      "email": "Michelle.Bosco87@yahoo.com",
+      "timezone": "America/Mazatlan",
+      "currency": "MWK",
+      "schoolAddress": {
+        "street": "321",
+        "city": "Port Burdette",
+        "state": "Indiana",
+        "zipCode": "56864-4056"
+      }
+    },
+    {
+      "id": 5,
+      "phoneNumber": "377-857-6998",
+      "website": "https://evergreen-balcony.info",
+      "email": "Clotilde.OKeefe@gmail.com",
+      "timezone": "Asia/Choibalsan",
+      "currency": "ZWL",
+      "schoolAddress": {
+        "street": "40591",
+        "city": "McLean",
+        "state": "Maine",
+        "zipCode": "50124"
+      }
+    },
+    {
+      "id": 6,
+      "phoneNumber": "1-230-669-1208 x733",
+      "website": "https://meager-romance.com/",
+      "email": "Vincenza_Bednar46@gmail.com",
+      "timezone": "Indian/Mahe",
+      "currency": "IRR",
+      "schoolAddress": {
+        "street": "16757",
+        "city": "West Kavonville",
+        "state": "Colorado",
+        "zipCode": "70189-4984"
+      }
+    },
+    {
+      "id": 7,
+      "phoneNumber": "(501) 540-9674 x31706",
+      "website": "https://gleeful-hovercraft.biz/",
+      "email": "Darian_Swift10@yahoo.com",
+      "timezone": "Asia/Omsk",
+      "currency": "BSD",
+      "schoolAddress": {
+        "street": "268",
+        "city": "Schinnerboro",
+        "state": "Maryland",
+        "zipCode": "40939"
+      }
+    },
+    {
+      "id": 8,
+      "phoneNumber": "641.739.0795 x89763",
+      "website": "https://lopsided-spirit.name",
+      "email": "Adolph63@hotmail.com",
+      "timezone": "America/Marigot",
+      "currency": "KWD",
+      "schoolAddress": {
+        "street": "5554",
+        "city": "New Dario",
+        "state": "Iowa",
+        "zipCode": "07417-9256"
+      }
+    },
+    {
+      "id": 9,
+      "phoneNumber": "(906) 692-9266 x52786",
+      "website": "https://unruly-organizing.biz/",
+      "email": "Eleanora88@gmail.com",
+      "timezone": "Africa/Addis_Ababa",
+      "currency": "RON",
+      "schoolAddress": {
+        "street": "3961",
+        "city": "Port Cedrickland",
+        "state": "Oklahoma",
+        "zipCode": "40186"
+      }
+    },
+    {
+      "id": 10,
+      "phoneNumber": "1-988-765-1288 x18326",
+      "website": "https://wonderful-trustee.name/",
+      "email": "Brandon82@gmail.com",
+      "timezone": "Asia/Bishkek",
+      "currency": "MXN",
+      "schoolAddress": {
+        "street": "252",
+        "city": "Winston-Salem",
+        "state": "Idaho",
+        "zipCode": "95771-2040"
+      }
+    },
+    {
+      "id": 11,
+      "phoneNumber": "261.701.1813 x928",
+      "website": "https://known-descent.org/",
+      "email": "Madaline_Cronin68@gmail.com",
+      "timezone": "Pacific/Kiritimati",
+      "currency": "FKP",
+      "schoolAddress": {
+        "street": "75071",
+        "city": "Walshstad",
+        "state": "Maine",
+        "zipCode": "07728-0126"
+      }
+    },
+    {
+      "id": 12,
+      "phoneNumber": "300-608-4867 x12557",
+      "website": "https://massive-notice.org",
+      "email": "Reginald74@hotmail.com",
+      "timezone": "Africa/Johannesburg",
+      "currency": "GHS",
+      "schoolAddress": {
+        "street": "2666",
+        "city": "Lake Neva",
+        "state": "West Virginia",
+        "zipCode": "57279"
+      }
+    },
+    {
+      "id": 13,
+      "phoneNumber": "(779) 467-7364 x171",
+      "website": "https://affectionate-statement.info/",
+      "email": "Patricia.Mohr78@hotmail.com",
+      "timezone": "America/Metlakatla",
+      "currency": "DOP",
+      "schoolAddress": {
+        "street": "6960",
+        "city": "Warner Robins",
+        "state": "Missouri",
+        "zipCode": "59563"
+      }
+    },
+    {
+      "id": 14,
+      "phoneNumber": "818-460-8188 x1549",
+      "website": "https://live-crayfish.name/",
+      "email": "Jessika.Carroll1@gmail.com",
+      "timezone": "Australia/Lindeman",
+      "currency": "MYR",
+      "schoolAddress": {
+        "street": "85669",
+        "city": "Blickport",
+        "state": "Kansas",
+        "zipCode": "88015-2517"
+      }
+    },
+    {
+      "id": 15,
+      "phoneNumber": "918-359-8303 x644",
+      "website": "https://sinful-vampire.net/",
+      "email": "Lily_Runte@yahoo.com",
+      "timezone": "America/Puerto_Rico",
+      "currency": "BOB",
+      "schoolAddress": {
+        "street": "26098",
+        "city": "South Monacester",
+        "state": "Colorado",
+        "zipCode": "95746"
+      }
+    },
+    {
+      "id": 16,
+      "phoneNumber": "1-994-822-2964 x0365",
+      "website": "https://knowledgeable-ostrich.net",
+      "email": "Jennie_Dicki13@gmail.com",
+      "timezone": "Asia/Tokyo",
+      "currency": "ISK",
+      "schoolAddress": {
+        "street": "67519",
+        "city": "Port Ivoryville",
+        "state": "Illinois",
+        "zipCode": "22830"
+      }
+    },
+    {
+      "id": 17,
+      "phoneNumber": "704.800.2680",
+      "website": "https://granular-living.net",
+      "email": "Kaycee.Cruickshank99@yahoo.com",
+      "timezone": "Pacific/Kanton",
+      "currency": "DOP",
+      "schoolAddress": {
+        "street": "918",
+        "city": "Fort Vincenzoville",
+        "state": "Iowa",
+        "zipCode": "82971-5743"
+      }
+    },
+    {
+      "id": 18,
+      "phoneNumber": "1-586-610-3140 x4222",
+      "website": "https://outlying-breastplate.org",
+      "email": "Nathanial_Brown56@gmail.com",
+      "timezone": "Australia/Sydney",
+      "currency": "TMT",
+      "schoolAddress": {
+        "street": "47041",
+        "city": "Lake Kavonworth",
+        "state": "Colorado",
+        "zipCode": "68036-4481"
+      }
+    },
+    {
+      "id": 19,
+      "phoneNumber": "540.479.4607 x646",
+      "website": "https://unwitting-context.biz/",
+      "email": "Lori35@hotmail.com",
+      "timezone": "Atlantic/South_Georgia",
+      "currency": "SSP",
+      "schoolAddress": {
+        "street": "45492",
+        "city": "Lubowitzborough",
+        "state": "Nevada",
+        "zipCode": "33978"
+      }
+    },
+    {
+      "id": 20,
+      "phoneNumber": "1-603-600-7713 x14887",
+      "website": "https://made-up-pneumonia.org/",
+      "email": "Ronny.Powlowski@hotmail.com",
+      "timezone": "Europe/Monaco",
+      "currency": "GHS",
+      "schoolAddress": {
+        "street": "1609",
+        "city": "East Tre",
+        "state": "Indiana",
+        "zipCode": "44542-5425"
+      }
+    },
+    {
+      "id": 21,
+      "phoneNumber": "544-815-3626 x6298",
+      "website": "https://evergreen-unique.net",
+      "email": "Brandy.Lynch@yahoo.com",
+      "timezone": "Africa/Blantyre",
+      "currency": "IQD",
+      "schoolAddress": {
+        "street": "71931",
+        "city": "South Golda",
+        "state": "Alaska",
+        "zipCode": "40067"
+      }
+    }
+  ],
+  "courses": [
+    {
+      "id": 0,
+      "courseName": "how agile",
+      "classType": "One to one",
+      "category": "Online school",
+      "pricingOption": "Paid",
+      "branches": "Other"
+    },
+    {
+      "id": 1,
+      "courseName": "fragrant hidden",
+      "classType": "One to one",
+      "category": "Online school",
+      "pricingOption": "Paid",
+      "branches": "Other"
+    },
+    {
+      "id": 2,
+      "courseName": "wrong whoa",
+      "classType": "One to one",
+      "category": "Preschool",
+      "pricingOption": "Free",
+      "branches": "Other"
+    },
+    {
+      "id": 3,
+      "courseName": "unimpressively aw",
+      "classType": "One to one",
+      "category": "Online school",
+      "pricingOption": "Paid",
+      "branches": "Main"
+    },
+    {
+      "id": 4,
+      "courseName": "blissfully incidentally",
+      "classType": "One to one",
+      "category": "Preschool",
+      "pricingOption": "Paid",
+      "branches": "Other"
+    },
+    {
+      "id": 5,
+      "courseName": "than yum",
+      "classType": "One to one",
+      "category": "Preschool",
+      "pricingOption": "Paid",
+      "branches": "Other"
+    },
+    {
+      "id": 6,
+      "courseName": "oeuvre softly",
+      "classType": "Group",
+      "category": "Preschool",
+      "pricingOption": "Free",
+      "branches": "Other"
+    },
+    {
+      "id": 7,
+      "courseName": "ew within",
+      "classType": "Group",
+      "category": "Preschool",
+      "pricingOption": "Free",
+      "branches": "Other"
+    },
+    {
+      "id": 8,
+      "courseName": "gosh so",
+      "classType": "Group",
+      "category": "Online school",
+      "pricingOption": "Paid",
+      "branches": "Other"
+    },
+    {
+      "id": 9,
+      "courseName": "during whereas",
+      "classType": "Group",
+      "category": "Preschool",
+      "pricingOption": "Free",
+      "branches": "Main"
+    },
+    {
+      "id": 10,
+      "courseName": "angelic via",
+      "classType": "Group",
+      "category": "Preschool",
+      "pricingOption": "Paid",
+      "branches": "Other"
+    },
+    {
+      "id": 11,
+      "courseName": "at until",
+      "classType": "One to one",
+      "category": "Preschool",
+      "pricingOption": "Free",
+      "branches": "Other"
+    },
+    {
+      "id": 12,
+      "courseName": "blah psst",
+      "classType": "One to one",
+      "category": "Preschool",
+      "pricingOption": "Paid",
+      "branches": "Other"
+    },
+    {
+      "id": 13,
+      "courseName": "softly cramp",
+      "classType": "One to one",
+      "category": "Online school",
+      "pricingOption": "Free",
+      "branches": "Other"
+    },
+    {
+      "id": 14,
+      "courseName": "whoa hollow",
+      "classType": "Group",
+      "category": "Online school",
+      "pricingOption": "Free",
+      "branches": "Other"
+    },
+    {
+      "id": 15,
+      "courseName": "loan harmonize",
+      "classType": "Group",
+      "category": "Preschool",
+      "pricingOption": "Free",
+      "branches": "Other"
+    },
+    {
+      "id": 16,
+      "courseName": "given sedately",
+      "classType": "Group",
+      "category": "Online school",
+      "pricingOption": "Free",
+      "branches": "Main"
+    },
+    {
+      "id": 17,
+      "courseName": "leafy when",
+      "classType": "One to one",
+      "category": "Preschool",
+      "pricingOption": "Paid",
+      "branches": "Other"
+    },
+    {
+      "id": 18,
+      "courseName": "failing rarely",
+      "classType": "One to one",
+      "category": "Preschool",
+      "pricingOption": "Paid",
+      "branches": "Main"
+    },
+    {
+      "id": 19,
+      "courseName": "steak cheerfully",
+      "classType": "One to one",
+      "category": "Preschool",
+      "pricingOption": "Paid",
+      "branches": "Main"
+    }
+  ],
+  "students": [
+    {
+      "id": 0,
+      "name": "Marcellus Prosacco",
+      "gender": "Male",
+      "ageGroup": "Child",
+      "status": "Waitlisted",
+      "studentId": "TESSE5762192112615424",
+      "dob": "2023-08-06",
+      "mother": {
+        "email": "Rahul.Bosco@yahoo.com",
+        "number": "350.713.5579 x16996"
+      },
+      "father": {
+        "email": "Hannah_Schiller55@hotmail.com",
+        "number": "(839) 458-7636"
+      }
+    },
+    {
+      "id": 1,
+      "name": "Stanford Larson",
+      "gender": "Female",
+      "ageGroup": "Child",
+      "status": "New",
+      "studentId": "TESSE2712020807843840",
+      "dob": "2023-03-11",
+      "mother": {
+        "email": "Althea63@hotmail.com",
+        "number": "592-483-3795 x6909"
+      },
+      "father": {
+        "email": "Gilda7@hotmail.com",
+        "number": "(493) 533-7006 x63398"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Tressie Jaskolski",
+      "gender": "Female",
+      "ageGroup": "Adult",
+      "status": "New",
+      "studentId": "TESSE3738867817512960",
+      "dob": "2022-10-02",
+      "mother": {
+        "email": "Jackeline.Sawayn@hotmail.com",
+        "number": "1-375-402-2608 x85708"
+      },
+      "father": {
+        "email": "Gloria77@yahoo.com",
+        "number": "752.828.9794 x6839"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Roma Wiza",
+      "gender": "Female",
+      "ageGroup": "Adult",
+      "status": "New",
+      "studentId": "TESSE7672666473365504",
+      "dob": "2023-03-27",
+      "mother": {
+        "email": "Wayne80@gmail.com",
+        "number": "1-809-201-3256 x358"
+      },
+      "father": {
+        "email": "Hayden.Kshlerin@yahoo.com",
+        "number": "1-505-304-0372"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Hope Kuhic",
+      "gender": "Male",
+      "ageGroup": "Child",
+      "status": "Waitlisted",
+      "studentId": "TESSE7059776273907712",
+      "dob": "2023-01-18",
+      "mother": {
+        "email": "Desiree20@yahoo.com",
+        "number": "387-751-4938 x57366"
+      },
+      "father": {
+        "email": "Gustave.Murazik@gmail.com",
+        "number": "930-279-3991"
+      }
+    },
+    {
+      "id": 5,
+      "name": "Maxie Lueilwitz",
+      "gender": "Male",
+      "ageGroup": "Adult",
+      "status": "Active",
+      "studentId": "TESSE7462817475067904",
+      "dob": "2023-08-11",
+      "mother": {
+        "email": "Ahmed_Gerlach@yahoo.com",
+        "number": "(232) 216-5368"
+      },
+      "father": {
+        "email": "Mallie.Wunsch56@gmail.com",
+        "number": "1-949-465-5312"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Enid Barton",
+      "gender": "Female",
+      "ageGroup": "Adult",
+      "status": "New",
+      "studentId": "TESSE60686126284800",
+      "dob": "2023-01-06",
+      "mother": {
+        "email": "Juvenal41@gmail.com",
+        "number": "561.258.1329 x259"
+      },
+      "father": { "email": "Novella23@gmail.com", "number": "1-388-463-3922" }
+    },
+    {
+      "id": 7,
+      "name": "Bret Tromp",
+      "gender": "Male",
+      "ageGroup": "Child",
+      "status": "Waitlisted",
+      "studentId": "TESSE1259144793292800",
+      "dob": "2023-06-19",
+      "mother": {
+        "email": "Aylin.Koelpin28@yahoo.com",
+        "number": "491.550.9293 x537"
+      },
+      "father": {
+        "email": "Maybelle.Dibbert16@yahoo.com",
+        "number": "584-356-6746 x783"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Keara Hahn",
+      "gender": "Male",
+      "ageGroup": "Child",
+      "status": "Active",
+      "studentId": "TESSE381523475824640",
+      "dob": "2022-11-10",
+      "mother": { "email": "Arden34@gmail.com", "number": "889-334-5035 x887" },
+      "father": {
+        "email": "Alana_McClure@yahoo.com",
+        "number": "220.845.0228 x03480"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Mackenzie McClure",
+      "gender": "Male",
+      "ageGroup": "Child",
+      "status": "Waitlisted",
+      "studentId": "TESSE2953152017989632",
+      "dob": "2022-11-21",
+      "mother": {
+        "email": "Adela.Barrows@gmail.com",
+        "number": "487.244.3382 x55512"
+      },
+      "father": {
+        "email": "Rosalia.Tillman22@gmail.com",
+        "number": "1-709-796-2520 x276"
+      }
+    }
+  ],
+  "staffs": [
+    {
+      "id": 0,
+      "name": "Deion O'Kon",
+      "email": "Melvina4@gmail.com",
+      "phone": "1-823-684-6659 x1710",
+      "designation": "Intern",
+      "location": "Other",
+      "role": "Teaching",
+      "billing": "Full access"
+    },
+    {
+      "id": 1,
+      "name": "Amina Littel",
+      "email": "Frederick.Swift@hotmail.com",
+      "phone": "238.785.6164 x678",
+      "designation": "Intern",
+      "location": "Other",
+      "role": "Admin & Teaching",
+      "billing": "Disable access"
+    },
+    {
+      "id": 2,
+      "name": "Laury Gibson-Barton",
+      "email": "Jaeden.Nader@gmail.com",
+      "phone": "940.832.4273 x11000",
+      "designation": "Employee",
+      "location": "Main",
+      "role": "Teaching",
+      "billing": "View access"
+    },
+    {
+      "id": 3,
+      "name": "Bernhard Morissette",
+      "email": "Stephon76@gmail.com",
+      "phone": "367.253.4251 x47435",
+      "designation": "Employee",
+      "location": "Other",
+      "role": "Teaching",
+      "billing": "Disable access"
+    },
+    {
+      "id": 4,
+      "name": "Demarcus Berge",
+      "email": "Jennifer46@gmail.com",
+      "phone": "(728) 674-6872",
+      "designation": "Intern",
+      "location": "Other",
+      "role": "Admin & Teaching",
+      "billing": "View access"
+    },
+    {
+      "id": 5,
+      "name": "Cristina Fritsch",
+      "email": "Bert.Kuvalis@gmail.com",
+      "phone": "1-924-726-7765 x3652",
+      "designation": "Intern",
+      "location": "Main",
+      "role": "Admin & Teaching",
+      "billing": "Full access"
+    },
+    {
+      "id": 6,
+      "name": "Brandt Kunde",
+      "email": "Ezra.Wisoky42@hotmail.com",
+      "phone": "(970) 475-2859 x4717",
+      "designation": "Intern",
+      "location": "Other",
+      "role": "Teaching",
+      "billing": "Disable access"
+    },
+    {
+      "id": 7,
+      "name": "Eve Lind",
+      "email": "Louie_Metz70@hotmail.com",
+      "phone": "868.796.8291 x792",
+      "designation": "Employee",
+      "location": "Other",
+      "role": "Teaching",
+      "billing": "View access"
+    },
+    {
+      "id": 8,
+      "name": "Herbert Shanahan",
+      "email": "Roselyn.Shanahan49@yahoo.com",
+      "phone": "311-936-2500",
+      "designation": "Employee",
+      "location": "Main",
+      "role": "Admin & Teaching",
+      "billing": "Disable access"
+    },
+    {
+      "id": 9,
+      "name": "Dejon Bashirian",
+      "email": "Ariane_Bogisich@yahoo.com",
+      "phone": "(548) 902-2556 x962",
+      "designation": "Employee",
+      "location": "Main",
+      "role": "Admin & Teaching",
+      "billing": "Disable access"
+    },
+    {
+      "id": 10,
+      "name": "Amanda Mosciski",
+      "email": "Janice_Okuneva@gmail.com",
+      "phone": "1-203-404-0064 x0083",
+      "designation": "Employee",
+      "location": "Main",
+      "role": "Teaching",
+      "billing": "View access"
+    },
+    {
+      "id": 11,
+      "name": "Blanca Dickens",
+      "email": "Delphine25@hotmail.com",
+      "phone": "(244) 671-0181 x3594",
+      "designation": "Intern",
+      "location": "Main",
+      "role": "Teaching",
+      "billing": "View access"
+    },
+    {
+      "id": 12,
+      "name": "D'angelo Murazik",
+      "email": "Paxton42@yahoo.com",
+      "phone": "971-451-9341 x25096",
+      "designation": "Intern",
+      "location": "Main",
+      "role": "Teaching",
+      "billing": "Full access"
+    },
+    {
+      "id": 13,
+      "name": "Samantha Torphy-Krajcik",
+      "email": "Eino5@gmail.com",
+      "phone": "1-205-801-5335 x935",
+      "designation": "Intern",
+      "location": "Other",
+      "role": "Admin & Teaching",
+      "billing": "Full access"
+    },
+    {
+      "id": 14,
+      "name": "Herman Pollich",
+      "email": "Cordie_Connelly@gmail.com",
+      "phone": "1-955-945-9799 x861",
+      "designation": "Intern",
+      "location": "Other",
+      "role": "Teaching",
+      "billing": "Disable access"
+    },
+    {
+      "id": 15,
+      "name": "Angeline Ernser",
+      "email": "Will_Koepp34@gmail.com",
+      "phone": "487-737-6611",
+      "designation": "Intern",
+      "location": "Main",
+      "role": "Teaching",
+      "billing": "Full access"
+    },
+    {
+      "id": 16,
+      "name": "Dion Kuvalis",
+      "email": "Sam_Keeling@gmail.com",
+      "phone": "1-215-883-9760 x195",
+      "designation": "Employee",
+      "location": "Main",
+      "role": "Teaching",
+      "billing": "View access"
+    },
+    {
+      "id": 17,
+      "name": "Darby Jaskolski",
+      "email": "Troy49@hotmail.com",
+      "phone": "343-338-5407 x93021",
+      "designation": "Employee",
+      "location": "Other",
+      "role": "Admin & Teaching",
+      "billing": "Full access"
+    },
+    {
+      "id": 18,
+      "name": "Elissa Hegmann",
+      "email": "Brycen.Kris21@hotmail.com",
+      "phone": "566.795.6024 x62066",
+      "designation": "Employee",
+      "location": "Other",
+      "role": "Admin & Teaching",
+      "billing": "View access"
+    },
+    {
+      "id": 19,
+      "name": "Jairo Stiedemann",
+      "email": "Margaretta.Howell94@gmail.com",
+      "phone": "1-979-551-8374 x3695",
+      "designation": "Employee",
+      "location": "Main",
+      "role": "Admin & Teaching",
+      "billing": "Disable access"
+    }
+  ]
+}
