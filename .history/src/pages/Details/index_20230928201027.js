@@ -72,7 +72,7 @@ function Index() {
               <h3>{ele.header}</h3>
               <p>
                 {ele.content}
-                {ind === 0 ? '' : JSON.stringify(values[ind]).slice(1, -1)}
+                {ind === 0 ? '' : JSON.stringify(values[ind]).substring(1, -2)}
               </p>
             </Content>
           </Card>

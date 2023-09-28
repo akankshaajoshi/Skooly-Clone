@@ -35,9 +35,7 @@ const Button = styled.button`
 `;
 
 function Navbar({ imageSrc }) {
-  const [user, setUser] = useState(
-    useSelector((state) => state.user.split(' ')[0]),
-  );
+  const [user, setUser] = useState(useSelector((state) => state.user));
 
   return (
     <NavbarContainer>

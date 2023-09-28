@@ -54,8 +54,7 @@ function Index() {
 
   // Set the global user state
   const user = data[0];
-  dispatch(editUser(user));
-  console.log(user);
+  console.log(data);
 
   const values = Object.values(user);
 
@@ -72,7 +71,7 @@ function Index() {
               <h3>{ele.header}</h3>
               <p>
                 {ele.content}
-                {ind === 0 ? '' : JSON.stringify(values[ind]).slice(1, -1)}
+                {ind === 0 ? '' : JSON.stringify(values[ind])}
               </p>
             </Content>
           </Card>

@@ -7,6 +7,7 @@ const generatePersonsData = (number) => {
   while (number >= 0) {
     persons.push({
       id: pid,
+      user: `${faker.person.firstName()} ${faker.person.lastName()}`,
       phoneNumber: faker.phone.number(),
       website: faker.internet.url(),
       email: faker.internet.email(),
@@ -18,7 +19,6 @@ const generatePersonsData = (number) => {
         state: faker.location.state(),
         zipCode: faker.location.zipCode(),
       },
-      user: `${faker.person.firstName()} ${faker.person.lastName()}`,
     });
     pid += 1;
     number -= 1;

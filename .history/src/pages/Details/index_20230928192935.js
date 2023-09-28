@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { useQuery } from 'react-query';
 import { useDispatch } from 'react-redux';
-import { editUser } from '@/store/userSlice';
 import Navbar from '@/containers/DashboardContainer/Navbar';
 import { details } from '@/utils/constants';
 import { fetchApiData } from '@/lib/fetchData';
@@ -52,11 +51,7 @@ function Index() {
     );
   }
 
-  // Set the global user state
   const user = data[0];
-  dispatch(editUser(user));
-  console.log(user);
-
   const values = Object.values(user);
 
   return (
@@ -72,7 +67,7 @@ function Index() {
               <h3>{ele.header}</h3>
               <p>
                 {ele.content}
-                {ind === 0 ? '' : JSON.stringify(values[ind]).slice(1, -1)}
+                {ind === 0 ? '' : JSON.stringify(values[ind])}
               </p>
             </Content>
           </Card>

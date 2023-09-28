@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -35,9 +34,7 @@ const Button = styled.button`
 `;
 
 function Navbar({ imageSrc }) {
-  const [user, setUser] = useState(
-    useSelector((state) => state.user.split(' ')[0]),
-  );
+  var [user, setUser] = setState(useSelector((state) => state.user));
 
   return (
     <NavbarContainer>

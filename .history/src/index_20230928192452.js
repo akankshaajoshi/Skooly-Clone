@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from '@/contexts/AuthContext';
+import { Provider } from 'react-redux';
 import store from '@/store/store';
 import '@/styles/index.css';
 import App from '@/App';
