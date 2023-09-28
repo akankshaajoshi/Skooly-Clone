@@ -33,7 +33,7 @@ const Button = styled.button`
   }
 `;
 
-function Navbar({ imageSrc }) {
+function Navbar({ name, imageSrc }) {
   const { user } = useSelector((state) => state.user);
 
   return (

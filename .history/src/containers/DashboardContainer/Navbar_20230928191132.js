@@ -33,7 +33,7 @@ const Button = styled.button`
   }
 `;
 
-function Navbar({ imageSrc }) {
+function Navbar({ name, imageSrc }) {
   const { user } = useSelector((state) => state.user);
 
   return (
@@ -42,12 +42,12 @@ function Navbar({ imageSrc }) {
         to="/register-school/preschool/dashboard/details"
         style={{ textDecoration: 'none' }}
       >
-        <NavbarImage src={imageSrc} alt={user} />
+        <NavbarImage src={imageSrc} alt={name} />
       </Link>
       <span>
         Welcome
         <br />
-        {user}
+        {name}
       </span>
       <Link to="/register-school/preschool/dashboard">
         <Button>Dashboard</Button>

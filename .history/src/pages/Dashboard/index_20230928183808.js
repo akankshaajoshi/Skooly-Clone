@@ -8,8 +8,8 @@ const Container = styled.div`
   justify-content: flex-start;
 `;
 
-// TODO: Keep all the logged in user's information within a redux store that passes the required data to each page
-// to prevent refetching
+//TODO: Keep all the logged in user's information within a redux store that passes the required data to each page
+//to prevent refetching
 
 function index({ children }) {
   return (

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { UseSelector } from 'react-redux/es/hooks/useSelector';
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -33,21 +33,19 @@ const Button = styled.button`
   }
 `;
 
-function Navbar({ imageSrc }) {
-  const { user } = useSelector((state) => state.user);
-
+function Navbar({ name, imageSrc }) {
   return (
     <NavbarContainer>
       <Link
         to="/register-school/preschool/dashboard/details"
         style={{ textDecoration: 'none' }}
       >
-        <NavbarImage src={imageSrc} alt={user} />
+        <NavbarImage src={imageSrc} alt={name} />
       </Link>
       <span>
         Welcome
         <br />
-        {user}
+        {name}
       </span>
       <Link to="/register-school/preschool/dashboard">
         <Button>Dashboard</Button>
