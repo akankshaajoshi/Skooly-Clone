@@ -133,7 +133,11 @@ export default function Signup() {
             <StyledInput
               type="password"
               placeholder="Your Password"
-              {...register('password')}
+              {...register('password', {
+                required: true,
+                minLength: 8,
+                max: 99,
+              })}
             />
             <Error>{errors.password?.message}</Error>
           </Field>
@@ -142,7 +146,7 @@ export default function Signup() {
               <StyledInput
                 style={{ flex: '2' }}
                 type="checkbox"
-                {...register('agreeTerms')}
+                {...register('agreeTerms', { required: true })}
               />
               <Text style={{ fontSize: fontSizes.xSmall, flex: '18' }}>
                 I agree to the{' '}

@@ -1,5 +1,5 @@
-import { useMutation } from 'react-query';
-import { useQueryClient } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
+
 import { postStaffData } from '@/lib/postData';
 
 const usePostStaff = () => {

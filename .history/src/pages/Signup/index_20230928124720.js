@@ -142,7 +142,7 @@ export default function Signup() {
               <StyledInput
                 style={{ flex: '2' }}
                 type="checkbox"
-                {...register('agreeTerms')}
+                {...register('agreeTerms', { required: true })}
               />
               <Text style={{ fontSize: fontSizes.xSmall, flex: '18' }}>
                 I agree to the{' '}

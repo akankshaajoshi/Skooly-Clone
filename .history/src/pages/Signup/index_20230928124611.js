@@ -12,7 +12,7 @@ import { legal } from '@/utils/constants';
 import { StyledLink } from '@/components/custom/StyledLink';
 import { Text } from '@/components/base/Typography';
 import { AuthContext } from '@/contexts/AuthContext';
-import StyledSelect from '@/components/custom/StyledSelect/StyledSelect';
+
 import {
   InnerContainer,
   Header,
@@ -26,6 +26,7 @@ import {
   Error,
   Wrapper,
 } from '@/pages/Signup/helpers';
+import StyledSelect from '@/components/custom/StyledSelect/StyledSelect';
 
 export default function Signup() {
   const { login } = useContext(AuthContext);
@@ -133,7 +134,11 @@ export default function Signup() {
             <StyledInput
               type="password"
               placeholder="Your Password"
-              {...register('password')}
+              {...register('password', {
+                required: true,
+                minLength: 8,
+                max: 99,
+              })}
             />
             <Error>{errors.password?.message}</Error>
           </Field>
@@ -142,7 +147,7 @@ export default function Signup() {
               <StyledInput
                 style={{ flex: '2' }}
                 type="checkbox"
-                {...register('agreeTerms')}
+                {...register('agreeTerms', { required: true })}
               />
               <Text style={{ fontSize: fontSizes.xSmall, flex: '18' }}>
                 I agree to the{' '}

@@ -1,5 +1,5 @@
-import { useMutation } from 'react-query';
-import { useQueryClient } from 'react-query';
+import { useMutation, useQueryClient } from 'react-query';
+
 import { updateCourseData } from '@/lib/patchData';
 
 const usePatchCourse = () => {
