@@ -1,6 +1,10 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import SlidingWindow from '@/containers/SlidingWindow';
+
+interface DropdownContentProps {
+  open: boolean;
+}
 
 const DropdownContainer = styled.div`
   display: inline-block;
@@ -14,8 +18,8 @@ const DropdownButton = styled.button`
   cursor: pointer;
 `;
 
-const DropdownContent = styled.div`
-  display: ${({ open }) => (open ? 'block' : 'none')};
+const DropdownContent = styled.div<DropdownContentProps>`
+  display: ${(props) => (props.open ? 'block' : 'none')};
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
@@ -32,7 +36,13 @@ const DropdownItem = styled.div`
   }
 `;
 
-function ActionsDropdown({ data, index }) {
+interface ActionsDropdownProps {
+  data: any; // Change 'any' to the actual type of 'data'
+  index: number; // Change 'number' to the actual type of 'index'
+  [propName: string]: any; // Rest property to accept any other props
+}
+
+function ActionsDropdown({ data, index, ...restProps }: ActionsDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [showSlidingWindow, setShowSlidingWindow] = useState(false);
 
@@ -46,7 +56,7 @@ function ActionsDropdown({ data, index }) {
   };
 
   return (
-    <DropdownContainer>
+    <DropdownContainer {...restProps}>
       <DropdownButton onClick={toggleDropdown}>Actions</DropdownButton>
       <SlidingWindow
         open={showSlidingWindow}

@@ -1,0 +1,276 @@
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import usePatchCourse from '@/hooks/usePatchCourse';
+
+interface SlidingWindowProps {
+  open: boolean;
+  onClose: () => void;
+  data: any;
+  index: number;
+  [propName: string]: any;
+}
+
+interface FormData {
+  id: number;
+  courseName: string;
+  classType: string;
+  category: string;
+  branches: string;
+  courseOffering: string;
+  fixedCourseDate: boolean;
+  startDate: string;
+  endDate: string;
+}
+
+const SlidingWindowContainer = styled.div<SlidingWindowProps>`
+  position: fixed;
+  top: 0;
+  right: ${({ open }) => (open ? '0' : '-50%')};
+  width: 50%;
+  height: 100%;
+  background-color: white;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease-in-out;
+  z-index: 999;
+  overflow-y: auto;
+`;
+
+const SlidingWindowContent = styled.div`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
+const FormGroup = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 30px 0px;
+`;
+
+const Label = styled.label`
+  width: 30%;
+  font-weight: bold;
+`;
+
+const Input = styled.input`
+  width: 70%;
+  padding: 5px;
+`;
+
+const RadioGroup = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+
+const RadioButtonLabel = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+`;
+
+const RadioButton = styled.input`
+  cursor: pointer;
+`;
+
+const CheckboxLabel = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+`;
+
+const Checkbox = styled.input`
+  cursor: pointer;
+`;
+
+function SlidingWindow({
+  open,
+  onClose,
+  data,
+  index,
+  ...restProps
+}: SlidingWindowProps) {
+  const { mutation } = usePatchCourse();
+
+  const [formData, setFormData] = useState<FormData>({
+    id: index,
+    courseName: '',
+    classType: '',
+    category: '',
+    branches: '',
+    courseOffering: '',
+    fixedCourseDate: false,
+    startDate: '',
+    endDate: '',
+  });
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
+    const { name, value, type } = e.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? e.target.checked : value,
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    mutation.mutateAsync({
+      index,
+      data: formData,
+    });
+    onClose();
+  };
+
+  return (
+    <SlidingWindowContainer {...restProps} open={open}>
+      <SlidingWindowContent>
+        <h2>Edit Course</h2>
+        <Form onSubmit={handleSubmit}>
+          <FormGroup>
+            <Label htmlFor="courseName">Course Name:</Label>
+            <Input
+              type="text"
+              id="courseName"
+              name="courseName"
+              value={formData.courseName}
+              onChange={handleInputChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="branches">Branch:</Label>
+            <Input
+              type="text"
+              id="branches"
+              name="branches"
+              value={formData.branches}
+              onChange={handleInputChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="courseOffering">Course Offering:</Label>
+            <RadioGroup>
+              <RadioButtonLabel>
+                <RadioButton
+                  type="radio"
+                  id="duration"
+                  name="courseOffering"
+                  value="duration"
+                  checked={formData.courseOffering === 'duration'}
+                  onChange={handleInputChange}
+                />
+                Duration(monthly or terms)
+              </RadioButtonLabel>
+              <RadioButtonLabel>
+                <RadioButton
+                  type="radio"
+                  id="sessions"
+                  name="courseOffering"
+                  value="sessions"
+                  checked={formData.courseOffering === 'sessions'}
+                  onChange={handleInputChange}
+                />
+                Sessions
+              </RadioButtonLabel>
+            </RadioGroup>
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="classType">Type of Class:</Label>
+            <RadioGroup>
+              <RadioButtonLabel>
+                <RadioButton
+                  type="radio"
+                  id="Group"
+                  name="classType"
+                  value="Group"
+                  checked={formData.classType === 'Group'}
+                  onChange={handleInputChange}
+                />
+                Group class
+              </RadioButtonLabel>
+              <RadioButtonLabel>
+                <RadioButton
+                  type="radio"
+                  id="One to one"
+                  name="classType"
+                  value="One to one"
+                  checked={formData.classType === 'One to one'}
+                  onChange={handleInputChange}
+                />
+                One to one or Private class
+              </RadioButtonLabel>
+            </RadioGroup>
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="fixedCourseDate">Fixed Course Date:</Label>
+            <CheckboxLabel>
+              <Checkbox
+                type="checkbox"
+                id="fixedCourseDate"
+                name="fixedCourseDate"
+                checked={formData.fixedCourseDate}
+                onChange={handleInputChange}
+              />
+              Fixed Course Date
+            </CheckboxLabel>
+          </FormGroup>
+          {formData.fixedCourseDate && (
+            <>
+              <FormGroup>
+                <Label htmlFor="startDate">Start Date:</Label>
+                <Input
+                  type="date"
+                  id="startDate"
+                  name="startDate"
+                  value={formData.startDate}
+                  onChange={handleInputChange}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label htmlFor="endDate">End Date:</Label>
+                <Input
+                  type="date"
+                  id="endDate"
+                  name="endDate"
+                  value={formData.endDate}
+                  onChange={handleInputChange}
+                />
+              </FormGroup>
+            </>
+          )}
+          <FormGroup>
+            <Label htmlFor="category">Category:</Label>
+            <Input
+              as="select"
+              id="category"
+              name="category"
+              value={formData.category}
+              onChange={handleInputChange}
+            >
+              <option value="">Select Category</option>
+              <option value="Online school">Online school</option>
+              <option value="Preschool">Preschool</option>
+              {/* Add more options as needed */}
+            </Input>
+          </FormGroup>
+          <div>
+            <button type="submit">Update</button>
+            <button type="button" onClick={onClose}>
+              Cancel
+            </button>
+          </div>
+        </Form>
+      </SlidingWindowContent>
+    </SlidingWindowContainer>
+  );
+}
+
+export default SlidingWindow;

@@ -1,7 +1,13 @@
+import React from 'react';
 import styled from 'styled-components';
 import { colors, fontSizes } from '@/assets';
 
-export const Button = styled.button`
+interface ButtonProps {
+  onClick: () => void;
+  children: React.ReactNode;
+}
+
+const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,3 +24,9 @@ export const Button = styled.button`
     cursor: pointer;
   }
 `;
+
+const Button: React.FC<ButtonProps> = ({ onClick, children }) => {
+  return <StyledButton onClick={onClick}>{children}</StyledButton>;
+};
+
+export default Button;
