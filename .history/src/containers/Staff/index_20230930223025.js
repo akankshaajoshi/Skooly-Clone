@@ -63,6 +63,7 @@ function Index() {
   }
 
   const data = useMemo(() => fakeStaffs, [fakeStaffs]);
+  console.log(fakeStaffs);
   const columns = useMemo(
     () => [
       {

@@ -50,6 +50,7 @@ const Button = styled.button`
 
 function Index() {
   const { fakeStaffs, isLoading, isError, error } = useFetchStaff();
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -63,6 +64,7 @@ function Index() {
   }
 
   const data = useMemo(() => fakeStaffs, [fakeStaffs]);
+  console.log(fakeStaffs);
   const columns = useMemo(
     () => [
       {
