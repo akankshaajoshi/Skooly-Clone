@@ -1,10 +1,7 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useQuery } from 'react-query';
-import { fetchApiData } from '@/lib/fetchData';
-import { editUser } from '@/store/userSlice';
+import { useSelector } from 'react-redux';
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -38,25 +35,11 @@ const Button = styled.button`
 `;
 
 function Navbar({ imageSrc }) {
-  const dispatch = useDispatch();
-  const { data, isLoading, isError, error } = useQuery('apiData', fetchApiData);
+  const { fakeUsers } = useQuery('userData', fetchApiData);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return (
-      <div>
-        Error:
-        {error.message}
-      </div>
-    );
-  }
-
-  const user = data[0];
-  const username = user.user;
-  dispatch(editUser(user));
+  const [user, setUser] = useState(
+    useSelector((state) => state.user.split(' ')[0]),
+  );
 
   return (
     <NavbarContainer>
@@ -64,12 +47,12 @@ function Navbar({ imageSrc }) {
         to="/register-school/preschool/dashboard/details"
         style={{ textDecoration: 'none' }}
       >
-        <NavbarImage src={imageSrc} alt="school" />
+        <NavbarImage src={imageSrc} alt={user} />
       </Link>
       <span>
         Welcome
         <br />
-        {username.split(' ')[0]}
+        {user}
       </span>
       <Link to="/register-school/preschool/dashboard">
         <Button>Dashboard</Button>

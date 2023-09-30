@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { fetchApiData } from '@/lib/fetchData';
-import { editUser } from '@/store/userSlice';
 
 const NavbarContainer = styled.div`
   display: flex;
@@ -55,7 +54,6 @@ function Navbar({ imageSrc }) {
   }
 
   const user = data[0];
-  const username = user.user;
   dispatch(editUser(user));
 
   return (
@@ -64,12 +62,12 @@ function Navbar({ imageSrc }) {
         to="/register-school/preschool/dashboard/details"
         style={{ textDecoration: 'none' }}
       >
-        <NavbarImage src={imageSrc} alt="school" />
+        <NavbarImage src={imageSrc} alt={user} />
       </Link>
       <span>
         Welcome
         <br />
-        {username.split(' ')[0]}
+        {user}
       </span>
       <Link to="/register-school/preschool/dashboard">
         <Button>Dashboard</Button>

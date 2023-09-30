@@ -69,7 +69,7 @@ function Navbar({ imageSrc }) {
       <span>
         Welcome
         <br />
-        {username.split(' ')[0]}
+        {username}
       </span>
       <Link to="/register-school/preschool/dashboard">
         <Button>Dashboard</Button>
