@@ -4,12 +4,12 @@ import { useForm } from 'react-hook-form';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Container } from '@/components/custom/Container';
+import Container from '@/components/custom/Container';
 import img from '@/assets/images/skooly-logo.png';
-import { Copyright } from '@/components/custom/Copyright';
+import Copyright from '@/components/custom/Copyright';
 import { fontSizes, colors, borderRadius } from '@/assets';
 import { legal } from '@/utils/constants';
-import { StyledLink } from '@/components/custom/StyledLink';
+import StyledLink from '@/components/custom/StyledLink';
 import { Text } from '@/components/base/Typography';
 import { AuthContext } from '@/contexts/AuthContext';
 import StyledSelect from '@/components/custom/StyledSelectNumber/StyledSelectNumber';
@@ -165,9 +165,7 @@ export default function Signup() {
           </Field>
         </Form>
       </InnerContainer>
-      <Copyright>
-        Copyright 2023 © Skooly Pte Ltd. All Rights Reserved.
-      </Copyright>
+      <Copyright />
     </Container>
   );
 }
