@@ -1,7 +1,13 @@
+import React from 'react';
 import { useSpring, animated } from 'react-spring';
 import { fontSizes } from '@/assets';
 
-function Stat({ value, label }) {
+interface StatProps {
+  value: number;
+  label: string;
+}
+
+function Stat({ value, label }: StatProps) {
   const { number } = useSpring({
     number: value,
     from: { number: 0 },
@@ -19,8 +25,10 @@ function Stat({ value, label }) {
       }}
     >
       <p style={{ fontSize: `${fontSizes.medium}`, fontWeight: '800' }}>
-        <animated.span>{number.to((val) => val.toFixed())}</animated.span>+
-        {value === 15 ? 'Million' : ''}
+        <animated.span>
+          {number.to((val: number) => val.toFixed())}
+        </animated.span>
+        +{value === 15 ? 'Million' : ''}
       </p>
       <p>{label}</p>
     </div>

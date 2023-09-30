@@ -666,6 +666,24 @@
       },
       "Branch": "Main",
       "id": 10
+    },
+    {
+      "name": "rahul",
+      "gender": "Male",
+      "ageGroup": "Adult",
+      "status": "Active",
+      "studentId": "TESSE5225698272739328",
+      "dob": "2023-09-01",
+      "mother": {
+        "email": "def@gmail.com",
+        "number": "3456789012"
+      },
+      "father": {
+        "email": "abc@gmail.com",
+        "number": "2345678901"
+      },
+      "Branch": "Main",
+      "id": 11
     }
   ],
   "staffs": [

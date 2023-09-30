@@ -134,7 +134,13 @@ function AddStudent({ open, index }) {
         <Form onSubmit={handleSubmit}>
           <FormGroup>
             <Label htmlFor="name">Student Name:</Label>
-            <Input type="text" id="name" name="name" value={formData.name} onChange={handleInputChange} />
+            <Input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleInputChange}
+            />
           </FormGroup>
 
           <FormGroup>
@@ -234,11 +240,23 @@ function AddStudent({ open, index }) {
           </FormGroup>
           <FormGroup>
             <Label htmlFor="dob">Date of Birth: </Label>
-            <Input type="date" id="dob" name="dob" value={formData.dob} onChange={handleInputChange} />
+            <Input
+              type="date"
+              id="dob"
+              name="dob"
+              value={formData.dob}
+              onChange={handleInputChange}
+            />
           </FormGroup>
           <FormGroup>
             <Label htmlFor="branch">Select Branch:</Label>
-            <Input as="select" id="Branch" name="Branch" value={formData.Branch} onChange={handleInputChange}>
+            <Input
+              as="select"
+              id="Branch"
+              name="Branch"
+              value={formData.Branch}
+              onChange={handleInputChange}
+            >
               <option value="">Select Branch</option>
               <option value="Main">Main</option>
               <option value="Other">Other</option>

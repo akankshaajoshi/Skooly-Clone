@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { hamburgerItems } from '@/utils/constants';
 import { colors } from '@/assets';
@@ -21,7 +21,7 @@ const Line = styled.div`
   margin: 5px 0;
 `;
 
-const MenuList = styled.ul`
+const MenuList = styled.ul<{ isOpen: boolean }>`
   position: fixed;
   list-style: none;
   padding: 10px;
@@ -36,7 +36,11 @@ const MenuItem = styled.li`
   margin: 10px 0;
 `;
 
-function HamburgerMenu({ ...rest }) {
+interface HamburgerMenuProps {
+  [key: string]: any;
+}
+
+function HamburgerMenu({ ...rest }: HamburgerMenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
