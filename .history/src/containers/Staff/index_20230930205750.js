@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useState, useMemo } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useTable } from 'react-table';
@@ -50,58 +49,42 @@ const Button = styled.button`
 
 function Index() {
   const { fakeStaffs, isLoading, isError, error } = useFetchStaff();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  if (!fakeStaffs) {
-    return null;
-  }
-
-  const data = useMemo(() => fakeStaffs, [fakeStaffs]);
   console.log(fakeStaffs);
-  const columns = useMemo(
-    () => [
-      {
-        Header: 'ID',
-        accessor: 'id',
-      },
-      {
-        Header: 'Name',
-        accessor: 'name',
-      },
-      {
-        Header: 'Email',
-        accessor: 'email',
-      },
-      {
-        Header: 'Phone',
-        accessor: 'phone',
-      },
-      {
-        Header: 'Designation',
-        accessor: 'designation',
-      },
-      {
-        Header: 'Location',
-        accessor: 'location',
-      },
-      {
-        Header: 'Role',
-        accessor: 'role',
-      },
-      {
-        Header: 'Billing',
-        accessor: 'billing',
-      },
-    ],
-    [],
-  );
+  const data = useMemo(() => fakeStaffs, [fakeStaffs]);
+  const columns = useMemo(() => [
+    {
+      Header: 'ID',
+      accessor: 'id',
+    },
+    {
+      Header: 'Name',
+      accessor: 'name',
+    },
+    {
+      Header: 'Email',
+      accessor: 'email',
+    },
+    {
+      Header: 'Phone',
+      accessor: 'phone',
+    },
+    {
+      Header: 'Designation',
+      accessor: 'designation',
+    },
+    {
+      Header: 'Location',
+      accessor: 'location',
+    },
+    {
+      Header: 'Role',
+      accessor: 'role',
+    },
+    {
+      Header: 'Billing',
+      accessor: 'billing',
+    },
+  ]);
 
   const { showBoundary } = useErrorBoundary();
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =

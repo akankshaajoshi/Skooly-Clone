@@ -1,10 +1,10 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useState, useMemo } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useTable } from 'react-table';
 import styled from 'styled-components';
 import useFetchStaff from '@/hooks/useFetchStaff';
 import SlidingWindow from '@/containers/AddStaff';
+import { useQueryClient } from 'react-query';
 
 const Container = styled.div`
   width: 100%;
@@ -49,22 +49,10 @@ const Button = styled.button`
 `;
 
 function Index() {
+  const queryClient = useQueryClient();
   const { fakeStaffs, isLoading, isError, error } = useFetchStaff();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  if (!fakeStaffs) {
-    return null;
-  }
-
-  const data = useMemo(() => fakeStaffs, [fakeStaffs]);
   console.log(fakeStaffs);
+  const data = useMemo(() => fakeStaffs, [fakeStaffs]);
   const columns = useMemo(
     () => [
       {

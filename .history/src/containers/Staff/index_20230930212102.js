@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useState, useMemo } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useTable } from 'react-table';
@@ -49,22 +48,16 @@ const Button = styled.button`
 `;
 
 function Index() {
+  const [rowData, setRowData] = useState(null);
+
   const { fakeStaffs, isLoading, isError, error } = useFetchStaff();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  if (!fakeStaffs) {
-    return null;
-  }
-
-  const data = useMemo(() => fakeStaffs, [fakeStaffs]);
   console.log(fakeStaffs);
+  setRowData([[fakeStaffs]]);
+
+  const data = useMemo(() => {
+    setRowData(fakeStaffs);
+  }, [fakeStaffs]);
+
   const columns = useMemo(
     () => [
       {
@@ -105,7 +98,7 @@ function Index() {
 
   const { showBoundary } = useErrorBoundary();
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data });
+    useTable({ columns, rowData });
 
   const [showSlidingWindow, setShowSlidingWindow] = useState(false);
 

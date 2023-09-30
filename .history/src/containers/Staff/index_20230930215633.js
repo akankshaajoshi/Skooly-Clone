@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { useState, useMemo } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useTable } from 'react-table';
@@ -50,16 +49,18 @@ const Button = styled.button`
 
 function Index() {
   const { fakeStaffs, isLoading, isError, error } = useFetchStaff();
-
   if (isLoading) {
+    // Loading state, you can render a loading spinner or message here
     return <div>Loading...</div>;
   }
 
   if (isError) {
+    // Error state, you can render an error message here
     return <div>Error: {error.message}</div>;
   }
 
   if (!fakeStaffs) {
+    // Data not available yet
     return null;
   }
 

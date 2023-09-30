@@ -50,7 +50,6 @@ const Button = styled.button`
 
 function Index() {
   const { fakeStaffs, isLoading, isError, error } = useFetchStaff();
-
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -63,8 +62,10 @@ function Index() {
     return null;
   }
 
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const data = useMemo(() => fakeStaffs, [fakeStaffs]);
   console.log(fakeStaffs);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   const columns = useMemo(
     () => [
       {

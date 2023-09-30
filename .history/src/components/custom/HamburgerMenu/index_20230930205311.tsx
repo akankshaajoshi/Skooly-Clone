@@ -1,8 +1,8 @@
-import React from 'react';
 import { useState } from 'react';
 import styled from 'styled-components';
 import { hamburgerItems } from '@/utils/constants';
 import { colors } from '@/assets';
+import React = require('react');
 
 const HamburgerMenuWrapper = styled.div`
   display: flex;

@@ -48,8 +48,8 @@ const Button = styled.button`
   }
 `;
 
-function Index() {
-  const { fakeStaffs, isLoading, isError, error } = useFetchStaff();
+async function Index() {
+  const { fakeStaffs, isLoading, isError, error } = await useFetchStaff();
 
   if (isLoading) {
     return <div>Loading...</div>;

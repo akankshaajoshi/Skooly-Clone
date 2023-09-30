@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useTable } from 'react-table';
 import styled from 'styled-components';
@@ -50,21 +49,19 @@ const Button = styled.button`
 
 function Index() {
   const { fakeStaffs, isLoading, isError, error } = useFetchStaff();
+  const [firstRender, setFirstRender] = useState(true);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  useEffect(() => {
+    if (firstRender) {
+      console.log('First render:', fakeStaffs);
+      setFirstRender(false);
+    }
+  }, [firstRender, fakeStaffs]);
 
-  if (isError) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  if (!fakeStaffs) {
-    return null;
-  }
-
-  const data = useMemo(() => fakeStaffs, [fakeStaffs]);
-  console.log(fakeStaffs);
+  const data = useMemo(
+    () => (firstRender ? [[...fakeStaffs]] : [...fakeStaffs]),
+    [firstRender, fakeStaffs],
+  );
   const columns = useMemo(
     () => [
       {

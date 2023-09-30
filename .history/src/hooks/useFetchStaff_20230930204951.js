@@ -3,12 +3,13 @@ import { fetchStaffData } from '@/lib/fetchData';
 
 const useFetchStaff = () => {
   const {
-    data: fakeStaffs,
+    data: fakeStaff,
     isLoading,
     isError,
     error,
   } = useQuery('staffData', fetchStaffData);
-  return { fakeStaffs, isLoading, isError, error };
+  console.log('Inside hook: ' + data);
+  return { fakeStaff, isLoading, isError, error };
 };
 
 export default useFetchStaff;

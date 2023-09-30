@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useTable } from 'react-table';
 import styled from 'styled-components';
@@ -49,57 +48,61 @@ const Button = styled.button`
 `;
 
 function Index() {
+  const [tableData, setTableData] = useState(null);
   const { fakeStaffs, isLoading, isError, error } = useFetchStaff();
+  console.log(fakeStaffs);
+  
+  useEffect(() => {
+    setTableData(fakeStaffs);
+  }, [fakeStaffs]);
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
 
-  if (isError) {
-    return <div>Error: {error.message}</div>;
-  }
+  const [columns, data] = useMemo(
+    () => {
+      const columns = [
+        {
+          Header: 'ID',
+          accessor: 'id',
+        },
+        {
+          Header: 'Name',
+          accessor: 'name',
+        },
+        {
+          Header: 'Email',
+          accessor: 'email',
+        },
+        {
+          Header: 'Phone',
+          accessor: 'phone',
+        },
+        {
+          Header: 'Designation',
+          accessor: 'designation',
+        },
+        {
+          Header: 'Location',
+          accessor: 'location',
+        },
+        {
+          Header: 'Role',
+          accessor: 'role',
+        },
+        {
+          Header: 'Billing',
+          accessor: 'billing',
+        },
+      ]
+      return [columns, tableData];
+    },
+    [tableData]
+  );
+  
 
-  if (!fakeStaffs) {
-    return null;
-  }
 
   const data = useMemo(() => fakeStaffs, [fakeStaffs]);
-  console.log(fakeStaffs);
   const columns = useMemo(
-    () => [
-      {
-        Header: 'ID',
-        accessor: 'id',
-      },
-      {
-        Header: 'Name',
-        accessor: 'name',
-      },
-      {
-        Header: 'Email',
-        accessor: 'email',
-      },
-      {
-        Header: 'Phone',
-        accessor: 'phone',
-      },
-      {
-        Header: 'Designation',
-        accessor: 'designation',
-      },
-      {
-        Header: 'Location',
-        accessor: 'location',
-      },
-      {
-        Header: 'Role',
-        accessor: 'role',
-      },
-      {
-        Header: 'Billing',
-        accessor: 'billing',
-      },
-    ],
+    () => ,
     [],
   );
 

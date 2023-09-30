@@ -120,6 +120,7 @@ function Index() {
         onClose={() => setShowSlidingWindow(false)}
       />
       <Button onClick={openSlidingWindow}>Add staff</Button>
+      {isLoading && <div>Loading....</div>}
       {!isLoading && !isError && (
         <Table {...getTableProps()}>
           {error && showBoundary(error)}

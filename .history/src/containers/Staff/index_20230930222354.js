@@ -63,6 +63,11 @@ function Index() {
     return null;
   }
 
+  useEffect(() => {
+    if (!isLoading && !isError) {
+    }
+  }, [fakeStaffs]);
+
   const data = useMemo(() => fakeStaffs, [fakeStaffs]);
   console.log(fakeStaffs);
   const columns = useMemo(

@@ -59,10 +59,6 @@ function Index() {
     return <div>Error: {error.message}</div>;
   }
 
-  if (!fakeStaffs) {
-    return null;
-  }
-
   const data = useMemo(() => fakeStaffs, [fakeStaffs]);
   console.log(fakeStaffs);
   const columns = useMemo(

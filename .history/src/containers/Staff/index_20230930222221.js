@@ -51,18 +51,6 @@ const Button = styled.button`
 function Index() {
   const { fakeStaffs, isLoading, isError, error } = useFetchStaff();
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  if (!fakeStaffs) {
-    return null;
-  }
-
   const data = useMemo(() => fakeStaffs, [fakeStaffs]);
   console.log(fakeStaffs);
   const columns = useMemo(
@@ -120,6 +108,7 @@ function Index() {
         onClose={() => setShowSlidingWindow(false)}
       />
       <Button onClick={openSlidingWindow}>Add staff</Button>
+      {isLoading && <div>Loading....</div>}
       {!isLoading && !isError && (
         <Table {...getTableProps()}>
           {error && showBoundary(error)}

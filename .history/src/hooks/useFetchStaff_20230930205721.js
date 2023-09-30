@@ -8,6 +8,7 @@ const useFetchStaff = () => {
     isError,
     error,
   } = useQuery('staffData', fetchStaffData);
+  console.log('Inside hook: ', fakeStaffs);
   return { fakeStaffs, isLoading, isError, error };
 };
 

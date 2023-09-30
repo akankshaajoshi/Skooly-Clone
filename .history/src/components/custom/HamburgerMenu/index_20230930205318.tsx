@@ -1,4 +1,4 @@
-import React from 'react';
+import React = require('react');
 import { useState } from 'react';
 import styled from 'styled-components';
 import { hamburgerItems } from '@/utils/constants';

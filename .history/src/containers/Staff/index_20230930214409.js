@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-import { useState, useMemo } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useErrorBoundary } from 'react-error-boundary';
 import { useTable } from 'react-table';
 import styled from 'styled-components';
@@ -49,24 +48,16 @@ const Button = styled.button`
 `;
 
 function Index() {
+  const [tableData, setTableData] = useState(null);
   const { fakeStaffs, isLoading, isError, error } = useFetchStaff();
-
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
-  if (isError) {
-    return <div>Error: {error.message}</div>;
-  }
-
-  if (!fakeStaffs) {
-    return null;
-  }
-
-  const data = useMemo(() => fakeStaffs, [fakeStaffs]);
   console.log(fakeStaffs);
-  const columns = useMemo(
-    () => [
+
+  useEffect(() => {
+    setTableData(fakeStaffs?);
+  }, [fakeStaffs]);
+
+  const [columns, data] = useMemo(() => {
+    const columns = [
       {
         Header: 'ID',
         accessor: 'id',
@@ -99,9 +90,9 @@ function Index() {
         Header: 'Billing',
         accessor: 'billing',
       },
-    ],
-    [],
-  );
+    ];
+    return [columns, tableData];
+  }, [tableData]);
 
   const { showBoundary } = useErrorBoundary();
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
