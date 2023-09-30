@@ -2,6 +2,10 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import SlidingWindow from '@/containers/SlidingWindow';
 
+interface DropdownContentProps {
+  open: boolean;
+}
+
 const DropdownContainer = styled.div`
   display: inline-block;
 `;
@@ -14,7 +18,7 @@ const DropdownButton = styled.button`
   cursor: pointer;
 `;
 
-const DropdownContent = styled.div`
+const DropdownContent = styled.div<DropdownContentProps>`
   display: ${({ open }) => (open ? 'block' : 'none')};
   position: absolute;
   background-color: #f9f9f9;
@@ -32,7 +36,12 @@ const DropdownItem = styled.div`
   }
 `;
 
-function ActionsDropdown({ data, index }) {
+interface ActionsDropdownProps {
+  data: any; // Replace 'any' with the actual type of 'data'
+  index: number;
+}
+
+function ActionsDropdown({ data, index }: ActionsDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [showSlidingWindow, setShowSlidingWindow] = useState(false);
 

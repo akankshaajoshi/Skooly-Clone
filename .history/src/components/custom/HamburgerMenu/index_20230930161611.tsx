@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import React, { useState, HTMLAttributes } from 'react';
 import styled from 'styled-components';
 import { hamburgerItems } from '@/utils/constants';
 import { colors } from '@/assets';
 
-const HamburgerMenuWrapper = styled.div`
+interface HamburgerMenuProps extends HTMLAttributes<HTMLDivElement> {}
+
+const HamburgerMenuWrapper = styled.div<HamburgerMenuProps>`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +38,7 @@ const MenuItem = styled.li`
   margin: 10px 0;
 `;
 
-function HamburgerMenu() {
+export const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ ...rest }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -44,7 +46,7 @@ function HamburgerMenu() {
   };
 
   return (
-    <HamburgerMenuWrapper>
+    <HamburgerMenuWrapper {...rest}>
       <HamburgerIcon onClick={toggleMenu}>
         <Line />
         <Line />
@@ -60,6 +62,4 @@ function HamburgerMenu() {
       </MenuList>
     </HamburgerMenuWrapper>
   );
-}
-
-export default HamburgerMenu;
+};

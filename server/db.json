@@ -491,7 +491,10 @@
         "email": "Anika72@gmail.com",
         "number": "1-676-465-8918 x53893"
       },
-      "father": { "email": "Jaycee11@yahoo.com", "number": "749.238.4859" }
+      "father": {
+        "email": "Jaycee11@yahoo.com",
+        "number": "749.238.4859"
+      }
     },
     {
       "id": 1,
@@ -518,7 +521,10 @@
       "status": "Active",
       "studentId": "TESSE5020783321546752",
       "dob": "2022-11-22",
-      "mother": { "email": "Jackie22@gmail.com", "number": "1-932-258-3974" },
+      "mother": {
+        "email": "Jackie22@gmail.com",
+        "number": "1-932-258-3974"
+      },
       "father": {
         "email": "Peggie.Effertz@hotmail.com",
         "number": "326.432.4844 x3527"
@@ -570,7 +576,10 @@
         "email": "Minnie43@gmail.com",
         "number": "375.601.4062 x188"
       },
-      "father": { "email": "Keagan45@gmail.com", "number": "(744) 913-5605" }
+      "father": {
+        "email": "Keagan45@gmail.com",
+        "number": "(744) 913-5605"
+      }
     },
     {
       "id": 6,
@@ -631,8 +640,32 @@
       "status": "Waitlisted",
       "studentId": "TESSE385292288655360",
       "dob": "2022-11-13",
-      "mother": { "email": "Pete99@gmail.com", "number": "224.288.8256" },
-      "father": { "email": "Mariah54@hotmail.com", "number": "388-485-8449" }
+      "mother": {
+        "email": "Pete99@gmail.com",
+        "number": "224.288.8256"
+      },
+      "father": {
+        "email": "Mariah54@hotmail.com",
+        "number": "388-485-8449"
+      }
+    },
+    {
+      "name": "Gaurav",
+      "gender": "Male",
+      "ageGroup": "Child",
+      "status": "Active",
+      "studentId": "TESSE4335519267815424",
+      "dob": "2023-09-12",
+      "mother": {
+        "email": "",
+        "number": ""
+      },
+      "father": {
+        "email": "",
+        "number": ""
+      },
+      "Branch": "Main",
+      "id": 10
     }
   ],
   "staffs": [

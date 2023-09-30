@@ -166,6 +166,7 @@ function FilterableTable() {
               <Th>Age Group</Th>
               <Th>Status</Th>
               <Th>Date of Birth</Th>
+              <Th>Action</Th>
             </tr>
           </TableHead>
           <tbody>
@@ -176,7 +177,7 @@ function FilterableTable() {
                 <Td>{student.gender}</Td>
                 <Td>{student.ageGroup}</Td>
                 <Td>{student.status}</Td>
-                <Td>{student.dob}</Td>{' '}
+                <Td>{student.dob}</Td>
               </tr>
             ))}
           </tbody>
