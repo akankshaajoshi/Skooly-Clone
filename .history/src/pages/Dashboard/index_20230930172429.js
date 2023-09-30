@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Navbar from '@/containers/DashboardContainer/Navbar';
 
+// Create a styled container component
 const Container = styled.div`
   display: flex;
   flex-direction: row;

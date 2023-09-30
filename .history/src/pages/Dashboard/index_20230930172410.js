@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Navbar from '@/containers/DashboardContainer/Navbar';
 
+// Create a styled container component
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -12,7 +13,7 @@ const Container = styled.div`
 
 function index({ children }) {
   return (
-    <Container style={{ minHeight: '100vh' }}>
+    <Container style={{display: "flex", minHeight: '100vh', flexDirection: "row", justifyContent: "flex-start" /}}>
       <Navbar imageSrc="https://getskooly.com/skoolyweb/imgs/dashboard/school-image.png" />
       {/* <Dashboard/> */}
       {/* <Course/> */}

@@ -1,15 +1,15 @@
 import * as yup from 'yup';
 import { useContext } from 'react';
-import { yupResolver } from '@hookform/resolvers/yup';
 import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { AuthContext } from '@/contexts/AuthContext';
+import { yupResolver } from '@hookform/resolvers/yup';
 import { Container } from '@/components/custom/Container';
+import img from '@/assets/images/skooly-logo.png';
 import { Copyright } from '@/components/custom/Copyright';
 import { heights, colors, borderRadius } from '@/assets';
 import { StyledLink } from '@/components/custom/StyledLink';
-import img from '@/assets/images/skooly-logo.png';
+import { AuthContext } from '@/contexts/AuthContext';
 
 import {
   InnerContainer,

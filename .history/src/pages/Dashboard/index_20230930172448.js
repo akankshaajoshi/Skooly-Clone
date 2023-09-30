@@ -3,7 +3,6 @@ import Navbar from '@/containers/DashboardContainer/Navbar';
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: flex-start;
 `;
 
