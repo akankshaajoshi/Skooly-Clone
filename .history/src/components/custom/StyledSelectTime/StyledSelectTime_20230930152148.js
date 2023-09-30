@@ -1,5 +1,4 @@
 import Select from '@/components/base/Select';
-
 function StyledSelectTime() {
   return (
     <Select>
