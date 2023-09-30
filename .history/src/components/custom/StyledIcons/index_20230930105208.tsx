@@ -3,7 +3,11 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
-export const StyledFacebookIcon = styled(FacebookIcon)`
+interface SocialIconProps {
+  [propName: string]: any;
+}
+
+export const StyledFacebookIcon = styled(FacebookIcon)<SocialIconProps>`
   && {
     opacity: 0.5;
     &:hover {
@@ -13,7 +17,7 @@ export const StyledFacebookIcon = styled(FacebookIcon)`
   }
 `;
 
-export const StyledTwitterIcon = styled(TwitterIcon)`
+export const StyledTwitterIcon = styled(TwitterIcon)<SocialIconProps>`
   && {
     opacity: 0.5;
     &:hover {
@@ -23,7 +27,7 @@ export const StyledTwitterIcon = styled(TwitterIcon)`
   }
 `;
 
-export const StyledYouTubeIcon = styled(YouTubeIcon)`
+export const StyledYouTubeIcon = styled(YouTubeIcon)<SocialIconProps>`
   && {
     opacity: 0.5;
     &:hover {
@@ -31,4 +35,3 @@ export const StyledYouTubeIcon = styled(YouTubeIcon)`
       opacity: 1;
     }
   }
-`;

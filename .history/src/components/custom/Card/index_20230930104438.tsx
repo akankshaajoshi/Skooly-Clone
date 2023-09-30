@@ -1,7 +1,10 @@
 import styled from 'styled-components';
-import { borderRadius } from '@/assets';
+import { borderRadius } from '@/assets/index.tsx';
 
-export const Card = styled.div`
+interface CardProps {
+  [propName: string]: any;
+}
+export const Card = styled.div<CardProps>`
   display: flex;
   align-items: center;
   flex-direction: row;

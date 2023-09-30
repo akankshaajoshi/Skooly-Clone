@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components';
 import { timelineData } from '@/utils/constants';
 
@@ -34,6 +35,10 @@ const TimelineContent = styled.div`
   flex-direction: column;
 `;
 
+interface TimelineEventProps {
+  event: [string, string];
+}
+
 function Timeline() {
   return (
     <TimelineContainer>
@@ -49,7 +54,7 @@ function Timeline() {
   );
 }
 
-function index() {
+function Index() {
   return (
     <div>
       <Timeline />
@@ -57,4 +62,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;

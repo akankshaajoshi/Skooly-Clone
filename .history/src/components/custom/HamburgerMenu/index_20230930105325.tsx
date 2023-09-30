@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { hamburgerItems } from '@/utils/constants';
 import { colors } from '@/assets';
@@ -21,7 +21,11 @@ const Line = styled.div`
   margin: 5px 0;
 `;
 
-const MenuList = styled.ul`
+interface MenuListProps {,
+  isOpen: boolean;
+}
+
+const MenuList = styled.ul<MenuListProps>`
   position: fixed;
   list-style: none;
   padding: 10px;

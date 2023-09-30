@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Copyright = styled.span`
+interface CopyrightProps {
+  [propName: string]: any;
+}
+
+export const Copyright = styled.span<CopyrightProps>`
   display: flex;
   align-self: center;
   justify-content: center;

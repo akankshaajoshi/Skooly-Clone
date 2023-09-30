@@ -10,12 +10,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.js",
-    "src/**/*.jsx",
-    "tests/**/*.ts"
-  ],
+  "include": ["src/**/*.ts", "tests/**/*.ts", "src/**/*.js"],
   "exclude": ["node_modules", ".vscode"]
 }

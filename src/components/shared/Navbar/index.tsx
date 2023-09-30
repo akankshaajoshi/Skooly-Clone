@@ -1,9 +1,10 @@
+import React from 'react';
 import styled from 'styled-components';
-import { navItems } from '@/utils/constants';
 import HamburgerMenu from '@/components/custom/HamburgerMenu';
-import { colors } from '@/assets';
 import logo from '@/assets/images/skooly-logo.png';
 import StyledLink from '@/components/custom/StyledLink';
+import { navItems } from '@/utils/constants';
+import { colors } from '@/assets';
 
 const Nav = styled.nav`
   display: flex;
@@ -54,16 +55,15 @@ const Img = styled.img`
   }
 `;
 
-const index = () => (
+const Index: React.FC = () => (
   <Nav>
     <NavLeft>
-      <Img src={logo} />
+      <Img src={logo} alt="Logo" />
     </NavLeft>
     <NavRight>
-      {navItems.map((item) => (
-        <StyledLink to={item[0]}>
-          {' '}
-          <NavComponent>{item[1]}</NavComponent>{' '}
+      {navItems.map((item, index) => (
+        <StyledLink to={item[0]} key={index}>
+          <NavComponent>{item[1]}</NavComponent>
         </StyledLink>
       ))}
       <HamburgerMenu />
@@ -71,4 +71,4 @@ const index = () => (
   </Nav>
 );
 
-export default index;
+export default Index;
