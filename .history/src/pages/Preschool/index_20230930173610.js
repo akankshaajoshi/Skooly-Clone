@@ -6,6 +6,7 @@ import img from '@/assets/images/skooly-logo.png';
 import { Header, Img } from '@/pages/Signup/helpers';
 import {
   InnerContainer,
+  Header,
   ImageWrapper,
   ColumnWrapper,
   DisplayImage,

@@ -1,4 +1,4 @@
-import * as yup from 'yup';
+import * from yup;
 import styled from 'styled-components';
 import { colors, fontSizes, borderRadius } from '@/assets';
 import { Input } from '@/components/base/Input';
@@ -96,33 +96,3 @@ export const Wrapper = styled.div`
   justify-content: flex-start;
   width: 100%;
 `;
-
-const phoneRegExp =
-  /^((\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
-export const schema = yup
-  .object({
-    firstName: yup
-      .string()
-      .required('First name is a required field')
-      .max(30, 'First name cannot have more than 30 characters'),
-    lastName: yup
-      .string()
-      .required('Last name is a required field')
-      .max(30, 'Last name cannot have more than 30 characters'),
-    email: yup
-      .string()
-      .email('Invalid email format, please enter a valid email')
-      .required('Please enter an email'),
-    password: yup
-      .string()
-      .required('Password is a required field')
-      .min(8, 'Minimum length of password must be 8 characters'),
-    mobileNumber: yup
-      .string()
-      .matches(phoneRegExp, 'Invalid format for a mobile number')
-      .min(10),
-    agreeTerms: yup
-      .string()
-      .required('Accept the terms and condition to sign up'),
-  })
-  .required();

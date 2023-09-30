@@ -8,6 +8,7 @@ function App() {
   return (
     <ErrorBoundary
       FallbackComponent={FallbackComponent}
+      onReset={() => {}}
       onError={(error, info) => {
         console.log('Caught an error: ', error, info);
       }}

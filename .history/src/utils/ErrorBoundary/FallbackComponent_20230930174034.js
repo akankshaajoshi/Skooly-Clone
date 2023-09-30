@@ -9,7 +9,7 @@ function FallbackComponent({ error, resetErrorBoundary }) {
         backgroundColor: 'rgb(100, 0, 0)',
       }}
     >
-      <h3 style={{ fontWeight: 'bolder' }}>Something went wrong:</h3>
+      <h3 style={{ fontWeight: 'bold' }}>Something went wrong:</h3>
       <pre>{error.message}</pre>
       <button type="button" onClick={resetErrorBoundary}>
         Try again

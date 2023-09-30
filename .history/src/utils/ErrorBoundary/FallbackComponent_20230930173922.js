@@ -2,14 +2,9 @@ function FallbackComponent({ error, resetErrorBoundary }) {
   return (
     <div
       role="alert"
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
-        backgroundColor: 'rgb(100, 0, 0)',
-      }}
+      style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}
     >
-      <h3 style={{ fontWeight: 'bolder' }}>Something went wrong:</h3>
+      <h3>Something went wrong:</h3>
       <pre>{error.message}</pre>
       <button type="button" onClick={resetErrorBoundary}>
         Try again

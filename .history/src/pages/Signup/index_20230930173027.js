@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import { Container } from '@/components/custom/Container';
 import img from '@/assets/images/skooly-logo.png';
 import { Copyright } from '@/components/custom/Copyright';
@@ -24,11 +25,11 @@ import {
   ButtonInput,
   Error,
   Wrapper,
-  schema,
 } from '@/pages/Signup/helpers';
 
 export default function Signup() {
   const { login } = useContext(AuthContext);
+
   const {
     register,
     handleSubmit,

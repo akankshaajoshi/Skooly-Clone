@@ -29,6 +29,7 @@ import {
 
 export default function Signup() {
   const { login } = useContext(AuthContext);
+
   const {
     register,
     handleSubmit,
