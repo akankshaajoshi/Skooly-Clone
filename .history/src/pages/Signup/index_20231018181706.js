@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -29,7 +29,6 @@ import {
 
 export default function Signup() {
   const { login } = useContext(AuthContext);
-  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -40,7 +39,7 @@ export default function Signup() {
 
   const onSubmit = (data) => {
     login();
-    navigate('/register-school/preschool/dashboard');
+    <Navigate to="/register-school/preschool/dashboard/"></Navigate>;
   };
 
   return (
